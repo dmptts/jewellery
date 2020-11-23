@@ -68,8 +68,88 @@
   </header>
 
   <main>
-    <section class="intro">
-      <h1><b>Perfection</b> made to be yours</h1>
+    <section class="product-card">
+      <div class="product-card__container container">
+        <div class="product-card__info">
+          <h2>Gold Necklace</h2>
+          <b>$ 115</b>
+          <div class="product-card__tabs">
+            <ul class="product-card__tabs-controls">
+              <li class="product-card__tabs-item">
+                <button class="product-card__tabs-btn">Description</button>
+              </li>
+              <li class="product-card__tabs-item">
+                <button class="product-card__tabs-btn product-card__tabs-btn--active">Additional info</button>
+              </li>
+            </ul>
+            <div class="product-card__tab">
+              <table>
+                <tr>
+                  <td>Metal type</td>
+                  <td>Gold 585</td>
+                </tr>
+                <tr>
+                  <td>Stone</td>
+                  <td>Turquoise</td>
+                </tr>
+                <tr>
+                  <td>Size</td>
+                  <td>18” / 20”</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <a href="#" class="product-card__btn">Add to cart</a>
+          <ul class="product-card__terms-list">
+            <li class="product-card__terms-item">
+              <a href="#" class="product-card__terms-link">14 Day Returns</a>
+            </li>
+            <li class="product-card__terms-item">
+              <a href="#" class="product-card__terms-link">2-Year Warranty</a>
+            </li>
+            <li class="product-card__terms-item">
+              <a href="#" class="product-card__terms-link">Free Shipping</a>
+            </li>
+          </ul>
+        </div>
+        <div class="product-card__gallery gallery">
+          <ul class="gallery__list">
+            <li class="gallery__item">
+              <a href="#" class="gallery__link">
+                <picture>
+                  <source type="image/webp" srcset="img/card-1-gold-necklace@1x.webp 1x, img/card-1-gold-necklace@2x.webp 2x">
+                  <!-- 1x: 100x125; 2x: 200x250-->
+                  <img src="img/card-1-gold-necklace@1x.jpg" srcset="img/card-1-gold-necklace@2x.jpg 2x" width="100" height="125" alt="Gold necklace side view">
+                </picture>
+              </a>
+            </li>
+            <li class="gallery__item">
+              <a href="#" class="gallery__link">
+                <picture>
+                  <source type="image/webp" srcset="img/card-2-gold-necklace@1x.webp 1x, img/card-2-gold-necklace@2x.webp 2x">
+                  <!-- 1x: 100x125; 2x: 200x250-->
+                  <img src="img/card-2-gold-necklace@1x.jpg" srcset="img/card-2-gold-necklace@2x.jpg 2x" width="100" height="125" alt="Gold necklace full view">
+                </picture>
+              </a>
+            </li>
+            <li class="gallery__item">
+              <a href="#" class="gallery__link">
+                <picture>
+                  <source type="image/webp" srcset="img/card-3-gold-necklace@1x.webp 1x, img/card-3-gold-necklace@2x.webp 2x">
+                  <!-- 1x: 100x125; 2x: 200x250-->
+                  <img src="img/card-3-gold-necklace@1x.jpg" srcset="img/card-3-gold-necklace@2x.jpg 2x" width="100" height="125" alt="Gold necklace front view">
+                </picture>
+              </a>
+            </li>
+          </ul>
+
+          <picture>
+            <source type="image/webp" srcset="img/card-selected-gold-necklace@1x.webp 1x, img/card-selected-gold-necklace@2x.webp 2x">
+            <!-- 1x: 470x435; 2x: 940x890-->
+            <img src="img/card-selected-gold-necklace@1x.jpg" srcset="img/card-selected-gold-necklace@2x.jpg 2x" width="470" height="435" alt="Gold necklace close-up">
+          </picture>
+        </div>
+      </div>
     </section>
 
     <section class="promo">
@@ -239,132 +319,6 @@
             <li class="slider__paginator-item"><a href="#" class="slider__paginator-link">3</a></li>
           </ul>
         </div>
-      </div>
-    </section>
-
-    <section class="blog">
-      <div class="blog__container container">
-        <h2>Blog</h2>
-        <a href="#" class="blog__link">Read all</a>
-        <ul class="blog__list">
-          <li class="blog__item">
-            <article class="blog__article article-card">
-              <h3>How to care for your jewellery</h3>
-              <a href="#">Read Article</a>
-              <time datetime="2019-09-30">September 30, 2019</time>
-            </article>
-          </li>
-          <li class="blog__item">
-            <article class="blog__article article-card">
-              <h3>Power of crystals</h3>
-              <a href="#">Read Article</a>
-              <time datetime="2019-09-23">September 23, 2019</time>
-            </article>
-          </li>
-          <li class="blog__item blog__item--large">
-            <article class="blog__article article-card">
-              <h3>AW 19 trends</h3>
-              <a href="#">Read Article</a>
-              <time datetime="2019-09-16">September 16, 2019</time>
-            </article>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="faq">
-      <div class="faq__container container">
-        <h2>Frequently asked questions</h2>
-        <ul class="faq__list">
-          <li class="faq__item">
-            <b>What materials are the jewellery made of?</b>
-            <p>Our jewellerry is made of solid gold, silver or leather. Also, some jewellery contains precious and semiprecious stones and crystals.</p>
-          </li>
-          <li class="faq__item">
-            <b>Which countries do you deliver to?</b>
-            <p>Our jewellerry is made of solid gold, silver or leather. Also, some jewellery contains precious and semiprecious stones and crystals.</p>
-          </li>
-          <li class="faq__item">
-            <b>What are the payment methods?</b>
-            <p>Our jewellerry is made of solid gold, silver or leather. Also, some jewellery contains precious and semiprecious stones and crystals.</p>
-          </li>
-          <li class="faq__item">
-            <b>Can I return the jewellery if it didn’t fit me?</b>
-            <p>Our jewellerry is made of solid gold, silver or leather. Also, some jewellery contains precious and semiprecious stones and crystals.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="instagram">
-      <div class="instagram__container container">
-        <h2>@Chjewellery</h2>
-        <a href="#" class="instagram__link">Follow us</a>
-        <ul class="instagram__list">
-          <li class="instagram__item">
-            <a href="#">
-              <picture>
-                <source type="image/webp" srcset="img/instagram-1@1x.webp 1x, img/instagram-1@2x.webp 2x">
-                  <!-- 1x: 230x230; 2x: 460x460-->
-                <img src="img/instagram-1@1x.jpg" srcset="img/instagram-1@2x.jpg 2x" width="230" height="230" alt="Earrings on laptop corner">
-              </picture>
-            </a>
-          </li>
-          <li class="instagram__item">
-            <a href="#">
-              <picture>
-                <source type="image/webp" srcset="img/instagram-2@1x.webp 1x, img/instagram-2@1x.webp 2x">
-                  <!-- 1x: 230x154; 2x: 460x308-->
-                <img src="img/instagram-2@1x.jpg" srcset="img/instagram-2@2x.jpg 2x" width="230" height="154" alt="Earrings">
-              </picture>
-            </a>
-          </li>
-          <li class="instagram__item">
-            <a href="#">
-              <picture>
-                <source type="image/webp" srcset="img/instagram-3@1x.webp 1x, img/instagram-3@1x.webp 2x">
-                  <!-- 1x: 400x414; 2x: 800x828-->
-                <img src="img/instagram-3@1x.jpg" srcset="img/instagram-3@2x.jpg 2x" width="400" height="414" alt="Woman with massive earrings">
-              </picture>
-            </a>
-          </li>
-          <li class="instagram__item">
-            <a href="#">
-              <picture>
-                <source type="image/webp" srcset="img/instagram-4@1x.webp 1x, img/instagram-4@1x.webp 2x">
-                  <!-- 1x: 232x193; 2x: 464x386-->
-                <img src="img/instagram-4@1x.jpg" srcset="img/instagram-4@2x.jpg 2x" width="232" height="193" alt="Woman in sweater with bracelets and ring">
-              </picture>
-            </a>
-          </li>
-          <li class="instagram__item">
-            <a href="#">
-              <picture>
-                <source type="image/webp" srcset="img/instagram-5@1x.webp 1x, img/instagram-5@1x.webp 2x">
-                  <!-- 1x: 218x191; 2x: 436x382-->
-                <img src="img/instagram-5@1x.jpg" srcset="img/instagram-5@2x.jpg 2x" width="218" height="191" alt="Jewellery on a table">
-              </picture>
-            </a>
-          </li>
-          <li class="instagram__item">
-            <a href="#">
-              <picture>
-                <source type="image/webp" srcset="img/instagram-6@1x.webp 1x, img/instagram-6@1x.webp 2x">
-                  <!-- 1x: 218x218; 2x: 436x436-->
-                <img src="img/instagram-6@1x.jpg" srcset="img/instagram-6@2x.jpg 2x" width="218" height="218" alt="Two golden rings on a book">
-              </picture>
-            </a>
-          </li>
-          <li class="instagram__item">
-            <a href="#">
-              <picture>
-                <source type="image/webp" srcset="img/instagram-7@1x.webp 1x, img/instagram-7@1x.webp 2x">
-                  <!-- 1x: 232x166; 2x: 464x332-->
-                <img src="img/instagram-7@1x.jpg" srcset="img/instagram-7@2x.jpg 2x" width="232" height="166" alt="Woman with a lot of rings on hands">
-              </picture>
-            </a>
-          </li>
-        </ul>
       </div>
     </section>
   </main>
