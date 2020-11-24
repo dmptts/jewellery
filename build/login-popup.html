@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CH Jewellery</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+  <main>
+    <div class="login-popup">
+      <h1>Log In</h1>
+      <form action="post" class="login-popup__form">
+        <label for="popup-email-field" class="visually-hidden">E-mail:</label>
+        <input type="email" name="email" id="popup-email-field" placeholder="Your E-mail" pattern="/^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u" required="">
+
+        <label for="popup-password-field" class="visually-hidden">Password:</label>
+        <input type="password" name="password" id="popup-password-field" placeholder="Password" required="">
+
+        <a href="#" class="login-popup__restore-link">Forgot your password</a>
+
+        <button type="submit">Log In</button>
+      </form>
+
+      <p>Don’t have an account? <a href="#" class="login-popup__registration-link">Sign up</a></p>
+    </div>
+    <div class="popup-overlay"></div>
+  </main>
+</body>
+</html>

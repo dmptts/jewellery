@@ -26,7 +26,7 @@
       </form>
 
       <div class="page-header__user-block user-block">
-        <a href="#" class="user-block__btn user-block__btn--login">Login</a>
+        <a href="login-popup.html" class="user-block__btn user-block__btn--login">Login</a>
         <a href="#" class="user-block__btn user-block__btn--cart">Cart <span>0</span></a>
       </div>
 
@@ -367,6 +367,25 @@
       </div>
     </div>
   </footer>
+
+  <div class="login-popup">
+    <h2>Log In</h2>
+    <form action="post" class="login-popup__form">
+      <label for="popup-email-field" class="visually-hidden">E-mail:</label>
+      <input type="email" name="email" id="popup-email-field" placeholder="Your E-mail" pattern="/^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u" required="">
+
+      <label for="popup-password-field" class="visually-hidden">Password:</label>
+      <input type="password" name="password" id="popup-password-field" placeholder="Password" required="">
+
+      <a href="#" class="login-popup__restore-link">Forgot your password</a>
+
+      <button type="submit">Log In</button>
+    </form>
+
+    <p>Don’t have an account? <a href="#" class="login-popup__registration-link">Sign up</a></p>
+  </div>
+  <div class="popup-overlay"></div>
+
   <script src="js/main.js"></script>
 </body>
 </html>
