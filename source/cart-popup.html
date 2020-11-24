@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CH Jewellery</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+  <main>
+    <div class="cart-popup">
+      <h1 class="visually-hidden">Cart</h1>
+      <b>The item was added to your cart</b>
+      <ul class="cart-popup__list">
+        <li class="cart-popup__item">
+          <picture>
+            <source type="image/webp" srcset="img/card-selected-gold-necklace@1x.webp 1x, img/card-selected-gold-necklace@2x.webp 2x">
+            <!-- 1x: 84x79; 2x: 168x258 -->
+            <img src="img/card-selected-gold-necklace@1x.jpg" srcset="img/card-selected-gold-necklace@2x.jpg 2x" width="84" height="79" alt="Gold necklace close-up">
+          </picture>
+          <div class="cart-popup__item-info">
+            <h2>Gold Necklace </h2>
+            <b>$ 115</b>
+          </div>
+          <div class="cart-popup__item-counter counter">
+            <button type="button" class="counter__control counter__control--increase">+</button>
+            <div class="counter__value">1</div>
+            <button type="button" class="counter__control counter__control--decrease">-</button>
+          </div>
+        </li>
+      </ul>
+      <div class="cart-popup__total">
+        <p>You have <span class="cart-popup__total-items">1</span> item in the cart</p>
+        <p>Cart subtotal: <span class="cart-popup__total-price">$ 115</span></p>
+      </div>
+      <div class="cart-popup__controls">
+        <a href="catalog.html" class="cart-popup__btn btn"></a>
+        <a href="#" class="cart-popup__btn btn"></a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

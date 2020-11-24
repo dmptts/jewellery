@@ -10,7 +10,7 @@
 <body>
   <header class="page-header">
     <div class="container page-header__container">
-      <!-- 1x: 66x66; 2x: 132x132-->
+      <!-- 1x: 66x66; 2x: 132x132 -->
       <img src="img/logo.svg" width="66" height="66" alt="CH Gewellery logo">
 
       <form action="post" class="page-header__search search">
@@ -99,7 +99,7 @@
               </table>
             </div>
           </div>
-          <a href="#" class="product-card__btn">Add to cart</a>
+          <a href="cart-popup.html" class="product-card__btn">Add to cart</a>
           <ul class="product-card__terms-list">
             <li class="product-card__terms-item">
               <a href="#" class="product-card__terms-link">14 Day Returns</a>
@@ -118,7 +118,7 @@
               <a href="#" class="gallery__link">
                 <picture>
                   <source type="image/webp" srcset="img/card-1-gold-necklace@1x.webp 1x, img/card-1-gold-necklace@2x.webp 2x">
-                  <!-- 1x: 100x125; 2x: 200x250-->
+                  <!-- 1x: 100x125; 2x: 200x250 -->
                   <img src="img/card-1-gold-necklace@1x.jpg" srcset="img/card-1-gold-necklace@2x.jpg 2x" width="100" height="125" alt="Gold necklace side view">
                 </picture>
               </a>
@@ -127,7 +127,7 @@
               <a href="#" class="gallery__link">
                 <picture>
                   <source type="image/webp" srcset="img/card-2-gold-necklace@1x.webp 1x, img/card-2-gold-necklace@2x.webp 2x">
-                  <!-- 1x: 100x125; 2x: 200x250-->
+                  <!-- 1x: 100x125; 2x: 200x250 -->
                   <img src="img/card-2-gold-necklace@1x.jpg" srcset="img/card-2-gold-necklace@2x.jpg 2x" width="100" height="125" alt="Gold necklace full view">
                 </picture>
               </a>
@@ -136,7 +136,7 @@
               <a href="#" class="gallery__link">
                 <picture>
                   <source type="image/webp" srcset="img/card-3-gold-necklace@1x.webp 1x, img/card-3-gold-necklace@2x.webp 2x">
-                  <!-- 1x: 100x125; 2x: 200x250-->
+                  <!-- 1x: 100x125; 2x: 200x250 -->
                   <img src="img/card-3-gold-necklace@1x.jpg" srcset="img/card-3-gold-necklace@2x.jpg 2x" width="100" height="125" alt="Gold necklace front view">
                 </picture>
               </a>
@@ -145,7 +145,7 @@
 
           <picture>
             <source type="image/webp" srcset="img/card-selected-gold-necklace@1x.webp 1x, img/card-selected-gold-necklace@2x.webp 2x">
-            <!-- 1x: 470x435; 2x: 940x890-->
+            <!-- 1x: 470x435; 2x: 940x890 -->
             <img src="img/card-selected-gold-necklace@1x.jpg" srcset="img/card-selected-gold-necklace@2x.jpg 2x" width="470" height="435" alt="Gold necklace close-up">
           </picture>
         </div>
@@ -409,6 +409,38 @@
       </div>
     </div>
   </footer>
+
+  <div class="cart-popup">
+    <b>The item was added to your cart</b>
+    <ul class="cart-popup__list">
+      <li class="cart-popup__item">
+        <picture>
+          <source type="image/webp" srcset="img/card-selected-gold-necklace@1x.webp 1x, img/card-selected-gold-necklace@2x.webp 2x">
+          <!-- 1x: 84x79; 2x: 168x258 -->
+          <img src="img/card-selected-gold-necklace@1x.jpg" srcset="img/card-selected-gold-necklace@2x.jpg 2x" width="84" height="79" alt="Gold necklace close-up">
+        </picture>
+        <div class="cart-popup__item-info">
+          <h2>Gold Necklace </h2>
+          <b>$ 115</b>
+        </div>
+        <div class="cart-popup__item-counter counter">
+          <button type="button" class="counter__control counter__control--increase">+</button>
+          <div class="counter__value">1</div>
+          <button type="button" class="counter__control counter__control--decrease">-</button>
+        </div>
+      </li>
+    </ul>
+    <div class="cart-popup__total">
+      <p>You have <span class="cart-popup__total-items">1</span> item in the cart</p>
+      <p>Cart subtotal: <span class="cart-popup__total-price">$ 115</span></p>
+    </div>
+    <div class="cart-popup__controls">
+      <a href="catalog.html" class="cart-popup__btn btn"></a>
+      <a href="#" class="cart-popup__btn btn"></a>
+    </div>
+  </div>
+  <div class="popup-overlay"></div>
+
   <script src="js/main.js"></script>
 </body>
 </html>
