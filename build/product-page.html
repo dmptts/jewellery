@@ -21,30 +21,36 @@
 </head>
 <body>
   <header class="page-header">
-    <div class="container page-header__container">
-      <!-- 1x: 66x66; 2x: 132x132 -->
-      <img src="img/logo.svg" width="66" height="66" alt="CH Gewellery logo">
+    <div class="page-header__top">
+      <div class="page-header__top-container container">
+        <!-- 1x: 66x66; 2x: 132x132-->
+        <a href="index.html" class="page-header__logo-link">
+          <img src="img/logo.svg" class="page-header__logo" width="66" height="66" alt="CH Gewellery logo">
+        </a>
 
-      <form action="post" class="page-header__search search">
-        <label for="site-search">
-          <!-- 1x: 14x14; 2x: 28x28 -->
-          <svg width="14" height="14">
-            <use xlink:href="img/sprite_auto.svg#icon-search"></use>
-          </svg>
-          Search the site:
-        </label>
-        <input type="search" id="site-search" placeholder="Type here to search">
-        <button class="search__btn">Search</button>
-      </form>
+        <form action="post" class="page-header__search search">
+          <label for="site-search">
+            <!-- 1x: 14x14; 2x: 28x28 -->
+            <svg width="14" height="14">
+              <use xlink:href="img/sprite_auto.svg#icon-search"></use>
+            </svg>
+            Search the site:
+          </label>
+          <input type="search" id="site-search" placeholder="Type here to search">
+          <button class="search__btn">Search</button>
+        </form>
 
-      <div class="page-header__user-block user-block">
-        <a href="login-popup.html" class="user-block__btn user-block__btn--login">Login</a>
-        <a href="#" class="user-block__btn user-block__btn--cart">Cart <span>0</span></a>
+        <div class="page-header__user-block user-block">
+          <a href="login-popup.html" class="user-block__btn user-block__btn--login">Login</a>
+          <a href="#" class="user-block__btn user-block__btn--cart">Cart <span class="user-block__cart-counter">0</span></a>
+        </div>
+
+        <button class="page-header__toggle" type="button">Открыть/закрыть меню</button>
       </div>
+    </div>
 
-      <button type="button">Открыть/закрыть меню</button>
-
-      <div class="page-header__menu main-menu">
+    <div class="page-header__menu">
+      <div class="page-header__menu-container container">
         <nav class="page-header__nav main-nav">
           <ul class="main-nav__list main-nav__list--main">
             <li class="main-nav__item">

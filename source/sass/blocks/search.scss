@@ -1,0 +1,40 @@
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search label {
+  display: flex;
+  align-items: center;
+  font-size: 0;
+}
+
+.search input {
+  width: 220px;
+  padding-top: 5px;
+  padding-bottom: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  font-size: 14px;
+  line-height: 21px;
+
+  border: none;
+
+
+  &::placeholder {
+    color: $color-grey;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus::placeholder {
+    color: $color-black;
+  }
+}
+
+.search__btn {
+  display: none;
+}

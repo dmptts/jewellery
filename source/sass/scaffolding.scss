@@ -5,6 +5,11 @@ $mobile-width: 767px;
 $retina-dpi: 144dpi;
 $retina-dppx: 1.5dppx;
 
+$color-black: #1d1613;
+$color-brown: #a87b62;
+$color-grey: #9b9997;
+
+
 @mixin list-reset {
   margin: 0;
   padding: 0;

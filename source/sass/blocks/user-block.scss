@@ -1,0 +1,28 @@
+.user-block__btn {
+  margin-right: 31px;
+
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-black;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover,
+  &:focus {
+    color: rgba($color-black, 0.5);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    color: rgba($color-black, 0.3);
+  }
+}
+
+.user-block__cart-counter {
+  margin-left: 3px;
+}

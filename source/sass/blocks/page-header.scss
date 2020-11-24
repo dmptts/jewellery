@@ -1,0 +1,57 @@
+.page-header__top {
+  border-bottom: 1px solid #f6f5f4;
+}
+
+.page-header__top-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  padding-top: 41px;
+  padding-bottom: 18px;
+  padding-left: 98px;
+  padding-right: 98px;
+}
+
+.page-header__menu-container {
+  display: flex;
+  justify-content: center;
+
+  padding-top: 21px;
+  padding-bottom: 16px;
+  padding-left: 98px;
+  padding-right: 98px;
+}
+
+.page-header__search {
+  order: 1;
+
+  margin-top: 8px;
+  margin-right: 318px;
+}
+
+.page-header__logo-link {
+  order: 2;
+
+  line-height: 0;
+}
+
+.page-header__logo {
+  width: 66px;
+  height: 66px;
+}
+
+.page-header__user-block {
+  order: 3;
+  margin-top: 12px;
+
+  margin-left: auto;
+}
+
+.page-header__toggle {
+  display: none;
+}
+
+.page-header__nav {
+  margin-right: -10px;
+}
