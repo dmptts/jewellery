@@ -4,3 +4,10 @@
   padding-left: 60px;
   padding-right: 60px;
 }
+
+@media (max-width: $tablet-width) {
+  .container {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+}

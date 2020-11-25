@@ -9,8 +9,13 @@
   font-size: 0;
 }
 
+.search svg {
+  width: 14px;
+  height: 14px;
+}
+
 .search input {
-  width: 220px;
+  width: 252px;
   padding-top: 5px;
   padding-bottom: 1px;
   padding-left: 15px;
@@ -37,4 +42,44 @@
 
 .search__btn {
   display: none;
+}
+
+@media (max-width: $tablet-width) {
+  .search {
+    width: 100%;
+
+    background-color: rgba(#ffffff, 0.15);
+    border-radius: 21px;
+
+    &:focus-within {
+      background-color: rgba(#ffffff, 0.3);
+    }
+  }
+
+  .search label {
+    padding-left: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .search svg {
+    width: 16px;
+    height: 16px;
+
+    fill: #ffffff;
+  }
+
+  .search input {
+    width: 100%;
+    padding-top: 11px;
+    padding-bottom: 8px;
+
+    color: #ffffff;
+
+    background-color: transparent;
+
+    &::placeholder {
+      font-size: 0;
+    }
+  }
 }
