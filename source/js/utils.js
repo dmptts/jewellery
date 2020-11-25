@@ -48,6 +48,10 @@
     }
   });
 
+  if (svg4everybody) {
+    svg4everybody();
+  }
+
   getCurrentVersion();
   initPage();
 })();

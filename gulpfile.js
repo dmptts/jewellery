@@ -31,6 +31,12 @@ gulp.task("css", function () {
     .pipe(server.stream());
 });
 
+gulp.task("libs", function() {
+  return gulp.src("node_modules/svg4everybody/dist/svg4everybody.js")
+    .pipe(concat("vendor.js"))
+    .pipe(gulp.dest("build/js/"));
+})
+
 gulp.task("js", function() {
   return gulp.src("source/js/*.js")
     .pipe(concat("main.js"))
@@ -106,5 +112,5 @@ gulp.task("clean", function () {
   return del("build");
 });
 
-gulp.task("build", gulp.series("clean", "copy", "css", "js", "sprite", "html"));
+gulp.task("build", gulp.series("clean", "copy", "css", "libs", "js", "sprite", "html"));
 gulp.task("start", gulp.series("build", "server"));
