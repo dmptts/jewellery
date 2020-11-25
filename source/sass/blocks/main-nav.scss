@@ -70,3 +70,9 @@
     color: rgba(#ffffff, 0.75);
   }
 }
+
+@media (max-width: $mobile-width) {
+  .main-nav__list {
+    margin-bottom: 30px;
+  }
+}

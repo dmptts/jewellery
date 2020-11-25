@@ -148,7 +148,6 @@
   .page-header__user-block {
     order: 3;
 
-    width: 256px;
     margin-top: 5px;
   }
 
@@ -235,5 +234,58 @@
 
   .page-header--no-js .page-header__search {
     margin-bottom: 0;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .page-header__top-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .page-header__menu-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .page-header__logo {
+    width: 52px;
+    height: 52px;
+  }
+
+  .page-header__toggle {
+    margin-right: 60px;
+  }
+
+  .page-header__user-block {
+    margin-left: 10px;
+  }
+
+  .page-header__search {
+    margin-bottom: 38px;
+  }
+
+  .page-header--menu-opened .page-header__nav {
+    padding-bottom: 34px;
+  }
+
+  .page-header--menu-opened .page-header__menu-container,
+  .page-header--no-js .page-header__menu-container {
+    padding-bottom: 37px;
+  }
+
+  .page-header--no-js .page-header__top-container {
+    padding-bottom: 19px;
+  }
+
+  .page-header--no-js .page-header__top-wrapper {
+    width: calc(50% + 26px);
+    margin-bottom: 22px;
+  }
+
+  .page-header--no-js .page-header__menu-container {
+    padding-top: 19px;
   }
 }

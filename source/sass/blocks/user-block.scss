@@ -46,18 +46,12 @@
   }
 
   .user-block__btn {
-
-
     font-size: 18px;
     line-height: 23px;
 
     &--cart {
       font-size: 0;
       line-height: 0;
-    }
-
-    &:last-child {
-      margin-left: 0;
     }
   }
 
@@ -78,11 +72,31 @@
     margin-left: 35px;
     margin-right: 0;
 
+    font-size: 14px;
+    line-height: 21px;
     color: white;
+
+    &--cart {
+      font-size: 0;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
   }
 
   .user-block--no-js .user-block__cart-icon,
   .user-block--menu-opened .user-block__cart-icon {
     stroke: #ffffff;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .user-block {
+    width: 75px;
+  }
+
+  .user-block--no-js .user-block__btn {
+    margin-left: 15px;
   }
 }
