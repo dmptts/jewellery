@@ -400,14 +400,16 @@
       <form action="post" class="page-footer__subscription subscription-form">
         <b>The good stuff in your inbox</b>
         <p>News and updates from CH. No spam, we promise.</p>
-        <label for="footer-email-field">E-mail:</label>
-        <input type="email" name="email" id="footer-email-field" placeholder="Your E-mail" pattern="/^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u" required="">
-        <button type="submit">Sign Up
-          <!-- 1x: 29x9; 2x: 58x18 -->
-          <svg width="29" height="9">
-            <use xlink:href="img/sprite_auto.svg#icon-arrow-right"></use>
-          </svg>
-        </button>
+        <div class="subscription-form__wrapper">
+          <label for="footer-email-field" class="visually-hidden">E-mail:</label>
+          <input type="email" name="email" id="footer-email-field" placeholder="Your E-mail" pattern="/^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u" required="">
+          <button class="subscription-form__submit" type="submit">Sign Up
+            <!-- 1x: 30x11; 2x: 60x22 -->
+            <svg width="30" height="11">
+              <use xlink:href="img/sprite_auto.svg#icon-arrow-right"></use>
+            </svg>
+          </button>
+        </div>
       </form>
       <div class="page-footer__wrapper">
         <nav class="page-footer__nav">
@@ -416,22 +418,24 @@
               <a href="#" class="page-footer__nav-link">Ordering & Payment</a>
             </li>
             <li class="page-footer__nav-item">
-              <a href="#" class="page-footer__nav-link">About CH</a>
-            </li>
-            <li class="page-footer__nav-item">
-              <a href="#" class="page-footer__nav-link">Ordering & Payment</a>
-            </li>
-            <li class="page-footer__nav-item">
-              <a href="#" class="page-footer__nav-link">Stores & Hours</a>
+              <a href="#" class="page-footer__nav-link">Terms & Conditions</a>
             </li>
             <li class="page-footer__nav-item">
               <a href="#" class="page-footer__nav-link">Returns & Exchanges</a>
             </li>
             <li class="page-footer__nav-item">
-              <a href="#" class="page-footer__nav-link">Jobs</a>
+              <a href="#" class="page-footer__nav-link">Delivery</a>
+            </li>
+          </ul>
+          <ul class="page-footer__nav-list">
+            <li class="page-footer__nav-item">
+              <a href="#" class="page-footer__nav-link">About CH</a>
             </li>
             <li class="page-footer__nav-item">
-              <a href="#" class="page-footer__nav-link">Delivery</a>
+              <a href="#" class="page-footer__nav-link">Stores & Hours</a>
+            </li>
+            <li class="page-footer__nav-item">
+              <a href="#" class="page-footer__nav-link">Jobs</a>
             </li>
             <li class="page-footer__nav-item">
               <a href="#" class="page-footer__nav-link">Contact Us</a>
@@ -443,7 +447,7 @@
             <li class="page-footer__social-item">
               <a href="#" class="page-footer__social-link">
                 <!-- 1x: 8x15; 2x: 16x30 -->
-                <svg width="8" height="15">
+                <svg class="page-footer__social-icon page-footer__social-icon--facebook" width="15" height="15">
                   <use xlink:href="img/sprite_auto.svg#icon-facebook"></use>
                 </svg>
                 Facebook
@@ -452,7 +456,7 @@
             <li class="page-footer__social-item">
               <a href="#" class="page-footer__social-link">
                 <!-- 1x: 15x15; 2x: 30x30 -->
-                <svg width="15" height="15">
+                <svg class="page-footer__social-icon page-footer__social-icon--instagram" width="15" height="15">
                   <use xlink:href="img/sprite_auto.svg#icon-instagram"></use>
                 </svg>
                 Instagram
@@ -461,7 +465,7 @@
             <li class="page-footer__social-item">
               <a href="#" class="page-footer__social-link">
                 <!-- 1x: 15x15; 2x: 30x30 -->
-                <svg width="15" height="15">
+                <svg class="page-footer__social-icon page-footer__social-icon--pinterest" width="15" height="15">
                   <use xlink:href="img/sprite_auto.svg#icon-pinterest"></use>
                 </svg>
                 Pinterest
@@ -470,7 +474,7 @@
             <li class="page-footer__social-item">
               <a href="#" class="page-footer__social-link">
                 <!-- 1x: 15x13; 2x: 30x26 -->
-                <svg width="15" height="13">
+                <svg class="page-footer__social-icon page-footer__social-icon--twitter" width="15" height="13">
                   <use xlink:href="img/sprite_auto.svg#icon-twitter"></use>
                 </svg>
                 Twitter
