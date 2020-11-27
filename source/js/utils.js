@@ -39,6 +39,7 @@
 
   window.addEventListener('resize', function (evt) {
     evt.preventDefault();
+    window.slider.setSliderItemsWidth();
     var pastVersion = currentVersion;
     getCurrentVersion();
 

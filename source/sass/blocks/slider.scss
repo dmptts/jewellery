@@ -1,0 +1,96 @@
+.slider {
+  margin-top: -52px;
+}
+
+.slider__controls {
+  @include list-reset;
+
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 86px;
+}
+
+.slider__controls-btn {
+  padding: 0;
+
+  font-size: 0;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+
+  &:hover svg {
+    stroke: $color-black;
+  }
+
+  &:active svg {
+    stroke: $color-grey;
+  }
+
+  &:disabled svg {
+    stroke: $color-grey;
+  }
+}
+
+.slider__controls-btn svg {
+  stroke: $color-brown;
+}
+
+.slider__list-container {
+  margin-bottom: 51px;
+
+  overflow: hidden;
+}
+
+.slider__list {
+  @include list-reset;
+
+  display: flex;
+
+  transition-property: margin-left;
+  transition-duration: 0.5s;
+}
+
+.slider__item {
+  flex-shrink: 0;
+  margin-right: 30px;
+
+  &:nth-child(4n+4) {
+    margin-right: 0;
+  }
+}
+
+.slider__paginator {
+  @include list-reset;
+
+  display: flex;
+  justify-content: center;
+}
+
+.slider__paginator-link {
+  margin-left: 6px;
+  margin-right: 6px;
+
+  line-height: 21px;
+  color: $color-grey;
+
+  &--active {
+    color: $color-black;
+
+    cursor: default;
+  }
+
+  &:hover {
+    color: $color-brown;
+  }
+
+  &--active:hover {
+    color: $color-black;
+  }
+
+  &:active {
+    color: $color-black;
+  }
+}
