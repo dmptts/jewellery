@@ -56,9 +56,9 @@
     window.slider.setSliderItemsWidth(currentVersion);
   });
 
-  if (svg4everybody) {
-    svg4everybody();
-  }
+  // if (svg4everybody) {
+  //   svg4everybody();
+  // }
 
   getCurrentVersion();
   initPage();
