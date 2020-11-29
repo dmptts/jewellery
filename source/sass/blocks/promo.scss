@@ -48,4 +48,38 @@
 
 .promo__slider {
   align-self: stretch;
+
+  margin-top: -52px;
+}
+
+@media (max-width: $tablet-width) {
+  .promo__container {
+    padding-top: 70px;
+  }
+
+  .promo h2 {
+    margin-bottom: 21px;
+  }
+
+  .promo__link::after {
+    bottom: -3px;
+  }
+
+  .promo__slider {
+    margin-top: -44px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .promo__container {
+    padding-top: 59px;
+  }
+
+  .promo h2 {
+    margin-bottom: 11px;
+  }
+
+  .promo__slider {
+    margin-top: 54px;
+  }
 }

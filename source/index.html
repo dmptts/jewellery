@@ -105,7 +105,7 @@
         <h2>New in</h2>
         <a href="#" class="promo__link">Shop now</a>
 
-        <div class="promo__slider slider">
+        <div class="promo__slider slider slider--no-js">
           <ul class="slider__controls">
             <li class="slider__controls-item">
               <button type="button" class="slider__controls-btn slider__controls-btn--prev" disabled>
@@ -264,9 +264,6 @@
             </ul>
           </div>
           <ul class="slider__paginator">
-            <li class="slider__paginator-item"><a href="#" class="slider__paginator-link slider__paginator-link--active">1</a></li>
-            <li class="slider__paginator-item"><a href="#" class="slider__paginator-link">2</a></li>
-            <li class="slider__paginator-item"><a href="#" class="slider__paginator-link">3</a></li>
           </ul>
         </div>
       </div>
@@ -507,6 +504,10 @@
     <p>Don’t have an account? <a href="#" class="login-popup__registration-link">Sign up</a></p>
   </div>
   <div class="popup-overlay"></div>
+
+  <template id="paginator-link">
+    <li class="slider__paginator-item"><a href="#" class="slider__paginator-link"></a></li>
+  </template>
 
   <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>

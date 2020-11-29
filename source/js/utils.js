@@ -9,6 +9,11 @@
   var initPage = function () {
     window.pageHeader.elem.classList.remove('page-header--no-js');
     window.pageHeader.userBlock.classList.remove('user-block--no-js');
+    if (window.slider) {
+      window.slider.elem.classList.remove('slider--no-js');
+      window.slider.setSliderItemsWidth(currentVersion);
+      window.slider.renderPaginator(currentVersion);
+    }
     checkNeedToChangeElems();
   };
 
@@ -39,14 +44,16 @@
 
   window.addEventListener('resize', function (evt) {
     evt.preventDefault();
-    window.slider.setSliderItemsWidth();
     var pastVersion = currentVersion;
     getCurrentVersion();
 
     if (pastVersion !== currentVersion) {
       window.pageHeader.replaceSearch(currentVersion);
       window.pageHeader.replaceLoginBtn(currentVersion);
+      window.slider.renderPaginator(currentVersion);
     }
+
+    window.slider.setSliderItemsWidth(currentVersion);
   });
 
   if (svg4everybody) {
@@ -55,4 +62,5 @@
 
   getCurrentVersion();
   initPage();
+
 })();

@@ -50,23 +50,89 @@
 })();
 
 (function () {
+  var MOBILE_WIDTH = 767;
+
   var slider = document.querySelector('.slider');
   var sliderPrevBtn = slider.querySelector('.slider__controls-btn--prev');
   var sliderNextBtn = slider.querySelector('.slider__controls-btn--next');
   var sliderList = slider.querySelector('.slider__list');
   var sliderItems = slider.querySelectorAll('.slider__item');
-  var paginatorLinks = slider.querySelectorAll('.slider__paginator-link');
-  var paginatorLinksArr = Array.prototype.slice.call(paginatorLinks);
-  var pageNum = 1;
-  var maxPageNum = Math.ceil(sliderItems.length / 4);
+  var paginator = slider.querySelector('.slider__paginator');
+  var paginatorLinksArr = [];
+  var paginatorLinkTemplate = document.querySelector('#paginator-link').content;
 
-  var setSliderItemsWidth = function () {
-    if (slider) {
-      for (var i = 0; i < sliderItems.length; i++) {
-        sliderItems[i].style.width = (slider.offsetWidth - (30 * 3)) / 4 + 'px';
-      }
-      shiftMargin(pageNum);
+  var touchstartX = 0;
+  var touchendX = 0;
+
+  var itemsRightMargin = 30;
+  var pageNum;
+  var itemsPerPage;
+  var maxPageNum;
+
+  var getItemsPerPage = function (currentVersion) {
+    if (currentVersion === 'desktop') {
+      itemsPerPage = 4;
+    } else {
+      itemsPerPage = 2;
     }
+  };
+
+  var renderPaginatorLinks = function () {
+    var paginatorFragment = document.createDocumentFragment();
+
+    for (var i = 0; i < maxPageNum; i++) {
+      var paginatorLinkElement = paginatorLinkTemplate.cloneNode(true);
+      paginatorFragment.appendChild(paginatorLinkElement);
+      paginatorFragment.children[i].children[0].textContent = i + 1;
+
+      if (i === 0) {
+        paginatorFragment.children[i].children[0].classList.add('slider__paginator-link--active');
+      }
+    }
+
+    paginator.appendChild(paginatorFragment);
+    addPaginatorListeners();
+  };
+
+  var renderPaginatorText = function () {
+    if (document.body.clientWidth <= MOBILE_WIDTH) {
+      paginator.textContent = pageNum + ' of ' + maxPageNum;
+    }
+  };
+
+  var renderPaginator = function (currentVersion) {
+    if (slider) {
+      removePaginator();
+      getItemsPerPage(currentVersion);
+      pageNum = 1;
+      maxPageNum = Math.ceil(sliderItems.length / itemsPerPage);
+
+      if (currentVersion !== 'mobile') {
+        renderPaginatorLinks();
+      } else {
+        renderPaginatorText();
+      }
+    }
+  };
+
+  var getPaginatorLinksArr = function () {
+    paginatorLinksArr = Array.prototype.slice.call(slider.querySelectorAll('.slider__paginator-link'));
+  };
+
+  var removePaginator = function () {
+    paginator.textContent = '';
+    var paginatorLinks = slider.querySelectorAll('.slider__paginator-item');
+    for (var i = 0; i < paginatorLinks.length; i++) {
+      paginatorLinks[i].remove();
+    }
+  };
+
+  var setSliderItemsWidth = function (currentVersion) {
+    getItemsPerPage(currentVersion);
+    for (var i = 0; i < sliderItems.length; i++) {
+      sliderItems[i].style.width = (slider.offsetWidth - (itemsRightMargin * (itemsPerPage - 1))) / itemsPerPage + 'px';
+    }
+    shiftMargin(pageNum);
   };
 
   var shiftMargin = function (newPageNum) {
@@ -87,13 +153,18 @@
 
   var switchPage = function (pageCount) {
     var newPageNum = pageNum + pageCount;
-    switchPaginatorClass(newPageNum);
-    shiftMargin(newPageNum);
-    pageNum = pageNum + pageCount;
-    toggleControls();
+    if (newPageNum <= maxPageNum && newPageNum > 0) {
+      if (document.querySelector('.slider__paginator-link')) {
+        switchPaginatorClass(newPageNum);
+      }
+      shiftMargin(newPageNum);
+      pageNum = pageNum + pageCount;
+      toggleControls();
+    }
   };
 
   var addPaginatorListeners = function () {
+    getPaginatorLinksArr();
     for (var i = 0; i < paginatorLinksArr.length; i++) {
       paginatorLinksArr[i].addEventListener('click', function (evt) {
         evt.preventDefault();
@@ -110,6 +181,17 @@
     paginatorLinksArr[newPageNum - 1].classList.add('slider__paginator-link--active');
   };
 
+  var onSliderSwipe = function () {
+    if (touchendX < touchstartX) {
+      switchPage(1);
+      renderPaginatorText();
+    }
+    if (touchendX > touchstartX) {
+      switchPage(-1);
+      renderPaginatorText();
+    }
+  };
+
   sliderPrevBtn.addEventListener('click', function (evt) {
     evt.preventDefault();
     switchPage(-1);
@@ -120,13 +202,25 @@
     switchPage(1);
   });
 
-  if (slider) {
-    setSliderItemsWidth();
-    addPaginatorListeners();
-  }
+  sliderList.addEventListener('touchstart', function (evt) {
+    var touchObj = evt.changedTouches[0];
+    touchstartX = touchObj.screenX;
+  }, false);
+
+  sliderList.addEventListener('touchmove', function (evt) {
+    evt.preventDefault();
+  }, false);
+
+  sliderList.addEventListener('touchend', function (evt) {
+    var touchObj = evt.changedTouches[0];
+    touchendX = touchObj.screenX;
+    onSliderSwipe();
+  }, false);
 
   window.slider = {
-    setSliderItemsWidth: setSliderItemsWidth
+    elem: slider,
+    setSliderItemsWidth: setSliderItemsWidth,
+    renderPaginator: renderPaginator
   };
 })();
 
@@ -139,6 +233,11 @@
   var initPage = function () {
     window.pageHeader.elem.classList.remove('page-header--no-js');
     window.pageHeader.userBlock.classList.remove('user-block--no-js');
+    if (window.slider) {
+      window.slider.elem.classList.remove('slider--no-js');
+      window.slider.setSliderItemsWidth(currentVersion);
+      window.slider.renderPaginator(currentVersion);
+    }
     checkNeedToChangeElems();
   };
 
@@ -169,14 +268,16 @@
 
   window.addEventListener('resize', function (evt) {
     evt.preventDefault();
-    window.slider.setSliderItemsWidth();
     var pastVersion = currentVersion;
     getCurrentVersion();
 
     if (pastVersion !== currentVersion) {
       window.pageHeader.replaceSearch(currentVersion);
       window.pageHeader.replaceLoginBtn(currentVersion);
+      window.slider.renderPaginator(currentVersion);
     }
+
+    window.slider.setSliderItemsWidth(currentVersion);
   });
 
   if (svg4everybody) {
@@ -185,4 +286,5 @@
 
   getCurrentVersion();
   initPage();
+
 })();

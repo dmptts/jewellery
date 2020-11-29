@@ -1,7 +1,7 @@
 .catalog-item__link {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
 
   &:hover h3 {
     text-decoration: underline;
@@ -35,4 +35,17 @@
   color: $color-black;
   font-weight: 700;
   text-align: center;
+}
+
+@media (max-width: $tablet-width) {
+  .catalog-item__link h3 {
+    margin-top: 23px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .catalog-item__link h3 {
+    margin-top: 17px;
+    margin-bottom: 6px;
+  }
 }
