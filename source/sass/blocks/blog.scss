@@ -22,6 +22,7 @@
   position: relative;
 
   margin-bottom: 75px;
+  padding-bottom: 2px;
 
   line-height: 21px;
   color: $color-black;
@@ -30,7 +31,7 @@
   &::after {
     position: absolute;
     content: "";
-    bottom: 2px;
+    bottom: 0;
     left: 0;
 
     width: 100%;
@@ -74,18 +75,6 @@
   background-size: 285px 300px;
   background-repeat: no-repeat;
 
-  &:nth-child(2n+1) {
-    margin-top: 0;
-  }
-
-  &:last-child,
-  &:nth-child(2n+1):nth-last-child(2) {
-    margin-right: 0;
-
-    background-size: 570px 630px;
-    background-position: top left;
-  }
-
   &:nth-child(odd) {
     justify-content: flex-end;
 
@@ -96,8 +85,23 @@
     background-position: top right;
   }
 
-  &:last-child:nth-child(odd) .blog__article {
-    height: 315px;
+
+  @media (min-width: 1024px) {
+    &:nth-child(2n+1) {
+      margin-top: 0;
+    }
+
+    &:last-child,
+    &:nth-child(2n+1):nth-last-child(2) {
+      margin-right: 0;
+
+      background-size: 570px 630px;
+      background-position: top left;
+    }
+
+    &:last-child:nth-child(odd) .blog__article {
+      height: 315px;
+    }
   }
 
   &--care {
@@ -121,6 +125,41 @@
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../img/blog-trends@2x.jpg");
+    }
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .blog__container {
+    padding-top: 31px;
+  }
+
+  .blog h2 {
+    margin-bottom: 22px;
+  }
+
+  .blog .blog__link {
+    margin-bottom: 60px;
+    padding-bottom: 3px;
+  }
+
+  .blog__list {
+    flex-wrap: nowrap;
+
+    height: auto;
+  }
+
+  .blog__item {
+    width: 100%;
+    height: 44%;
+    margin-top: 0;
+    margin-bottom: 50px;
+    margin-right: 0;
+
+    background-size: 50% auto;
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }
