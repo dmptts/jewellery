@@ -4,6 +4,7 @@
   align-items: center;
 
   padding-top: 59px;
+  padding-bottom: 59px;
 }
 
 .faq h2 {
@@ -110,6 +111,7 @@
 @media (max-width: $tablet-width) {
   .faq__container {
     padding-top: 34px;
+    padding-bottom: 36px;
   }
 
   .faq__list {
@@ -146,6 +148,7 @@
 @media (max-width: $mobile-width) {
   .faq__container {
     padding-top: 29px;
+    padding-bottom: 30px;
   }
 
   .faq h2 {
