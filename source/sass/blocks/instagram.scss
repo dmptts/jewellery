@@ -269,6 +269,7 @@
       height: 226px;
 
       object-fit: cover;
+      font-family: "object-fit: cover;"; // Поддержка object-fit в IE11
     }
 
     &--4 img {
@@ -298,8 +299,6 @@
 
       &--3 img {
         height: 350px;
-
-        object-fit: cover;
       }
     }
   }

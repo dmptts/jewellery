@@ -302,6 +302,10 @@
     svg4everybody();
   }
 
+  if (objectFitImages) {
+    objectFitImages();
+  }
+
   getCurrentVersion();
   initPage();
 
