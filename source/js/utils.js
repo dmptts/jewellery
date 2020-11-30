@@ -67,6 +67,10 @@
     objectFitImages();
   }
 
+  if (window.picturefill){
+    window.picturefill();
+  }
+
   getCurrentVersion();
   initPage();
 

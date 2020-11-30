@@ -34,6 +34,7 @@ gulp.task("css", function () {
 gulp.task("libs", function() {
   return gulp.src("node_modules/svg4everybody/dist/svg4everybody.js")
     .pipe(gulp.src("node_modules/object-fit-images/dist/ofi.js"))
+    .pipe(gulp.src("node_modules/picturefill/dist/picturefill.js"))
     .pipe(concat("vendor.js"))
     .pipe(gulp.dest("build/js/"));
 })
