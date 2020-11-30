@@ -14,6 +14,9 @@
       window.slider.setSliderItemsWidth(currentVersion);
       window.slider.renderPaginator(currentVersion);
     }
+    if (window.faq) {
+      window.faq.init();
+    }
     checkNeedToChangeElems();
   };
 

@@ -4,6 +4,7 @@
   align-items: center;
 
   padding-top: 55px;
+  padding-bottom: 60px;
 }
 
 .blog h2 {
@@ -21,7 +22,7 @@
 .blog__link {
   position: relative;
 
-  margin-bottom: 75px;
+  margin-bottom: 73px;
   padding-bottom: 2px;
 
   line-height: 21px;
@@ -132,6 +133,7 @@
 @media (max-width: $tablet-width) {
   .blog__container {
     padding-top: 31px;
+    padding-bottom: 35px;
   }
 
   .blog h2 {
@@ -173,6 +175,7 @@
 @media (max-width: $mobile-width) {
   .blog__container {
     padding-top: 25px;
+    padding-bottom: 30px;
   }
 
   .blog__link {
