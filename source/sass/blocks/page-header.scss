@@ -60,6 +60,27 @@
   margin-right: -10px;
 }
 
+.page-header--inner-page .page-header__top-container {
+  align-items: center;
+
+  padding-top: 30px;
+  padding-bottom: 29px;
+}
+
+.page-header--inner-page .page-header__top-wrapper {
+  align-items: center;
+}
+
+.page-header--inner-page .page-header__search {
+  margin-top: 0;
+}
+
+.page-header--inner-page .page-header__user-block {
+  margin-top: 5px;
+}
+
+
+
 @media (max-width: $tablet-width) {
   .page-header {
     position: relative;
