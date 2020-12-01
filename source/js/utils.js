@@ -9,7 +9,7 @@
   var initPage = function () {
     window.pageHeader.elem.classList.remove('page-header--no-js');
     window.pageHeader.userBlock.classList.remove('user-block--no-js');
-    if (window.slider) {
+    if (window.slider.elem) {
       window.slider.elem.classList.remove('slider--no-js');
       window.slider.setSliderItemsWidth(currentVersion);
       window.slider.renderPaginator(currentVersion);
@@ -67,11 +67,10 @@
     objectFitImages();
   }
 
-  if (window.picturefill){
+  if (window.picturefill) {
     window.picturefill();
   }
 
   getCurrentVersion();
   initPage();
-
 })();

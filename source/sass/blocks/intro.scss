@@ -1,12 +1,13 @@
 .intro {
   background-color: $color-brown;
-  box-shadow: 0 4px 4px 0 rgba(#000000, 0.25);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
   &--index {
     background-image: url("../img/bg-index-intro-desktop@1x.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+
+    box-shadow: 0 4px 4px 0 rgba(#000000, 0.25);
   }
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
@@ -14,11 +15,26 @@
       background-image: url("../img/bg-index-intro-desktop@2x.jpg");
     }
   }
+
+  &--catalog {
+    background-image: url("../img/bg-catalog-intro-desktop@1x.jpg");
+  }
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    &--catalog {
+      background-image: url("../img/bg-catalog-intro-desktop@2x.jpg");
+    }
+  }
 }
 
 .intro__container {
   padding-top: 181px;
   padding-bottom: 180px;
+}
+
+.intro--catalog .intro__container {
+  padding-top: 91px;
+  padding-bottom: 94px;
 }
 
 .intro h1 {
@@ -31,9 +47,15 @@
   @include garamond-font-family;
   font-size: 38px;
   line-height: 50px;
-  color: #ffffff;
   font-weight: 400;
+  color: #ffffff;
+  text-align: center;
   font-style: italic;
+}
+
+.intro--catalog h1 {
+  font-size: 22px;
+  line-height: 28px;
 }
 
 .intro b {
@@ -47,21 +69,41 @@
   letter-spacing: 1.1px;
 }
 
+.intro--catalog b {
+  margin-bottom: 4px;
+
+  font-size: 34px;
+  line-height: 44px;
+  letter-spacing: 0.8px;
+}
+
 @media (max-width: $tablet-width) {
   .intro {
     box-shadow: none;
-  }
 
-  .intro--index {
-    background-image: url("../img/bg-index-intro-tablet@1x.jpg");
+    &--index {
+      background-image: url("../img/bg-index-intro-tablet@1x.jpg");
 
-    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/bg-index-intro-tablet@2x.jpg");
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/bg-index-intro-tablet@2x.jpg");
+      }
+    }
+
+    &--catalog {
+      background-image: url("../img/bg-catalog-intro-tablet@1x.jpg");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/bg-catalog-intro-tablet@2x.jpg");
+      }
     }
   }
 
-  .intro h1 {
+  .intro--index h1 {
     margin-left: -18px;
+  }
+
+  .intro--catalog b {
+    letter-spacing: 0.4px;
   }
 }
 
@@ -79,15 +121,30 @@
     padding-bottom: 187px;
   }
 
-  .intro h1 {
+  .intro--catalog .intro__container {
+    padding-top: 78px;
+    padding-bottom: 83px;
+  }
+
+  .intro--index h1 {
     margin-left: 0;
 
     font-size: 34px;
     line-height: 44px;
   }
 
-  .intro b {
+  .intro--catalog h1 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .intro--index b {
     font-size: 38px;
     line-height: 50px;
+  }
+
+  .intro--catalog b {
+    font-size: 34px;
+    line-height: 44px;
   }
 }
