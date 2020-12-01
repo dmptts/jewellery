@@ -1,0 +1,43 @@
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  padding-top: 26px;
+  padding-bottom: 21px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  line-height: 21px;
+  color: white;
+  text-transform: capitalize;
+
+  background-color: $color-brown;
+  border: none;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($color-brown, 0.6);
+  }
+
+  &:active {
+    background-color: rgba($color-brown, 0.3);
+  }
+
+  &--white {
+    color: $color-black;
+
+    background-color: transparent;
+    border: 1px solid $color-brown;
+  }
+
+  &--white:hover {
+    color: #ffffff;
+    background-color: $color-brown;
+  }
+
+  &--white:active {
+    color: #ffffff;
+    background-color: rgba($color-brown, 0.6);
+  }
+}

@@ -102,51 +102,100 @@
 
     <div class="container">
       <section class="catalog-filter">
-        <h2>Filter</h2>
+        <h2 class="visually-hidden">Filter</h2>
         <form action="post" class="catalog-filter__form">
-          <fieldset>
-            <legend>Product</legend>
+          <div class="catalog-filter__fieldset-wrapper catalog-filter__fieldset-wrapper--opened">
+            <fieldset>
+              <legend>Product</legend>
 
-            <input type="checkbox" name="necklaces" id="necklaces-field">
-            <label for="necklaces-field">Necklaces</label>
+              <div class="catalog-filter__dropdown">
+                <div class="catalog-filter__input-wrapper">
+                  <input type="checkbox" name="necklaces" id="necklaces-field" class="visually-hidden">
+                  <label for="necklaces-field">Necklaces</label>
+                </div>
 
-            <input type="checkbox" name="chokers" id="chokers-field">
-            <label for="chokers-field">Chokers</label>
+                <div class="catalog-filter__input-wrapper">
+                  <input type="checkbox" name="chokers" id="chokers-field" class="visually-hidden">
+                  <label for="chokers-field">Chokers</label>
+                </div>
 
-            <input type="checkbox" name="rings" id="rings-field">
-            <label for="rings-field">Rings</label>
+                <div class="catalog-filter__input-wrapper">
+                  <input type="checkbox" name="rings" id="rings-field" class="visually-hidden">
+                  <label for="rings-field">Rings</label>
+                </div>
 
-            <input type="checkbox" name="earrings" id="earrings-field">
-            <label for="earrings-field">Earrings</label>
-          </fieldset>
-          <fieldset>
-            <legend>Material</legend>
+                <div class="catalog-filter__input-wrapper">
+                  <input type="checkbox" name="earrings" id="earrings-field" class="visually-hidden">
+                  <label for="earrings-field">Earrings</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
 
-            <input type="checkbox" name="material-gold" id="material-gold-field">
-            <label for="material-gold-field">Gold</label>
+          <div class="catalog-filter__fieldset-wrapper">
+            <fieldset>
+              <legend>Material</legend>
 
-            <input type="checkbox" name="material-silver" id="material-silver-field">
-            <label for="material-silver-field">Silver</label>
-          </fieldset>
-          <fieldset>
-            <legend>Collection</legend>
+              <div class="catalog-filter__dropdown">
+                <div class="catalog-filter__input-wrapper">
+                  <input type="checkbox" name="material-gold" id="material-gold-field" class="visually-hidden">
+                  <label for="material-gold-field">Gold</label>
+                </div>
 
-            <input type="checkbox" name="collection-pink-flamingo" id="collection-pink-flamingo-field">
-            <label for="collection-pink-flamingo-field">Pink flamingo</label>
+                <div class="catalog-filter__input-wrapper">
+                  <input type="checkbox" name="material-silver" id="material-silver-field" class="visually-hidden">
+                  <label for="material-silver-field">Silver</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
 
-            <input type="checkbox" name="collection-dreams" id="collection-dreams-field">
-            <label for="collection-dreams-field">Dreams</label>
-          </fieldset>
-          <fieldset>
-            <legend>Price</legend>
-          </fieldset>
-          <button type="submit">Apply</button>
-          <button type="reset">Clear all</button>
+          <div class="catalog-filter__fieldset-wrapper">
+            <fieldset>
+              <legend>Collection</legend>
+
+              <div class="catalog-filter__dropdown">
+                <div class="catalog-filter__input-wrapper">
+                  <input type="checkbox" name="collection-pink-flamingo" id="collection-pink-flamingo-field" class="visually-hidden">
+                  <label for="collection-pink-flamingo-field">Pink flamingo</label>
+                </div>
+
+                <div class="catalog-filter__input-wrapper">
+                  <input type="checkbox" name="collection-dreams" id="collection-dreams-field" class="visually-hidden">
+                  <label for="collection-dreams-field">Dreams</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="catalog-filter__fieldset-wrapper catalog-filter__fieldset-wrapper--opened">
+            <fieldset>
+              <legend>Price</legend>
+
+              <div class="catalog-filter__dropdown">
+                <div class="catalog-filter__range range-filter">
+                  <div class="range-filter__bar">
+                    <div class="range-filter__scale"></div>
+                  </div>
+                  <div class="range-filter__ctrl range-filter__ctrl--min">
+                    <div class="range-filter__ctrl-btn"></div>
+                    <div class="range-filter__ctrl-value">$ 55</div>
+                  </div>
+                  <div class="range-filter__ctrl range-filter__ctrl--max">
+                    <div class="range-filter__ctrl-btn"></div>
+                    <div class="range-filter__ctrl-value">$ 155</div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <button type="submit" class="catalog-filter__submit btn">Apply</button>
+          <button type="reset" class="catalog-filter__reset btn btn btn--white">Clear all</button>
         </form>
+        <button type="button" class="catalog-filter__btn btn">Filter</button>
       </section>
 
       <section class="catalog">
-        <h2>Catalog</h2>
+        <h2 class="visually-hidden">Catalog</h2>
         <ul class="catalog__list">
           <li class="catalog__item catalog-item">
             <a href="#" class="catalog-item__link">
@@ -282,31 +331,32 @@
           </li>
         </ul>
 
-        <ul class="catalog__paginator">
-          <li class="catalog__paginator-item">
-            <a href="#" class="catalog__paginator-link catalog__paginator-link--prev">Previous</a>
-          </li>
-          <li class="catalog__paginator-item">
-            <a href="#" class="catalog__paginator-link">1</a>
-          </li>
-          <li class="catalog__paginator-item">
-            <a href="#" class="catalog__paginator-link">2</a>
-          </li>
-          <li class="catalog__paginator-item">
-            <a href="#" class="catalog__paginator-link">3</a>
-          </li>
-          <li class="catalog__paginator-item">
-            <a href="#" class="catalog__paginator-link">4</a>
-          </li>
-          <li class="catalog__paginator-item">
-            <a href="#" class="catalog__paginator-link">5</a>
-          </li>
-          <li class="catalog__paginator-item">
-            <a href="#" class="catalog__paginator-link catalog__paginator-link--next">Next</a>
-          </li>
-        </ul>
       </section>
     </div>
+
+    <ul class="paginator">
+      <li class="catalog__paginator-item">
+        <a href="#" class="catalog__paginator-link catalog__paginator-link--prev">Previous</a>
+      </li>
+      <li class="catalog__paginator-item">
+        <a href="#" class="catalog__paginator-link">1</a>
+      </li>
+      <li class="catalog__paginator-item">
+        <a href="#" class="catalog__paginator-link">2</a>
+      </li>
+      <li class="catalog__paginator-item">
+        <a href="#" class="catalog__paginator-link">3</a>
+      </li>
+      <li class="catalog__paginator-item">
+        <a href="#" class="catalog__paginator-link">4</a>
+      </li>
+      <li class="catalog__paginator-item">
+        <a href="#" class="catalog__paginator-link">5</a>
+      </li>
+      <li class="catalog__paginator-item">
+        <a href="#" class="catalog__paginator-link catalog__paginator-link--next">Next</a>
+      </li>
+    </ul>
   </main>
 
   <footer class="page-footer">

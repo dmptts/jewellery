@@ -3,8 +3,10 @@
 @import "scaffolding.scss";
 @import "main.scss";
 @import "blocks/container.scss";
+@import "blocks/btn.scss";
 @import "blocks/search.scss";
 @import "blocks/catalog-item.scss";
+@import "blocks/range-filter.scss";
 @import "blocks/slider.scss";
 @import "blocks/article-card.scss";
 @import "blocks/user-block.scss";
@@ -16,4 +18,7 @@
 @import "blocks/blog";
 @import "blocks/faq.scss";
 @import "blocks/instagram.scss";
+@import "blocks/catalog-filter.scss";
+@import "blocks/catalog.scss";
+@import "blocks/paginator.scss";
 @import "blocks/page-footer.scss";

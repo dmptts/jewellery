@@ -1,0 +1,137 @@
+.catalog-filter {
+  flex-shrink: 0;
+
+  width: 250px;
+  padding-top: 80px;
+}
+
+.catalog-filter__fieldset-wrapper {
+  margin-bottom: -1px;
+
+  border: 1px solid $color-brown;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.catalog-filter__form fieldset {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+
+  border: none;
+}
+
+.catalog-filter__form legend {
+  position: relative;
+
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 23px;
+  padding-left: 25px;
+  padding-right: 25px;
+
+  line-height: 21px;
+  color: $color-black;
+
+  &:hover {
+    color: rgba($color-black, 0.6);
+  }
+
+  &:active {
+    color: rgba($color-black, 0.3);
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    top: 32px;
+
+    width: 11px;
+    height: 1px;
+
+    background-color: $color-brown;
+  }
+
+  &::before {
+    right: 30px;
+
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    right: 23px;
+
+    transform: rotate(-45deg);
+  }
+}
+
+.catalog-filter__dropdown {
+  display: none;
+  padding-bottom: 12px;
+  padding-left: 34px;
+  padding-right: 25px;
+}
+
+.catalog-filter__fieldset-wrapper--opened legend {
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+}
+
+.catalog-filter__fieldset-wrapper--opened .catalog-filter__dropdown {
+  display: block;
+}
+
+.catalog-filter__form label {
+  font-size: 14px;
+  line-height: 18px;
+  color: $color-black;
+
+  cursor: pointer;
+}
+
+.catalog-filter__form input[type="checkbox"] + label {
+  position: relative;
+
+  display: block;
+  margin-bottom: 12px;
+  padding-left: 25px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+
+    width: 15px;
+    height: 15px;
+
+    background-color: transparent;
+    border: 1px solid $color-brown;
+  }
+}
+
+.catalog-filter__input-wrapper:last-child label {
+  margin-bottom: 0;
+}
+
+.catalog-filter__form input[type="checkbox"]:checked + label::before {
+  background-color: $color-brown;
+}
+
+.catalog-filter__submit {
+  margin-top: 36px;
+  margin-bottom: 24px;
+}
+
+.catalog-filter__btn {
+  display: none;
+}
