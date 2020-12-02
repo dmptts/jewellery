@@ -88,3 +88,19 @@
     line-height: 21px;
   }
 }
+
+@media (max-width: $mobile-width) {
+  .range-filter__scale {
+    left: 34px;
+  }
+
+  .range-filter__ctrl {
+    &--min {
+      left: 34px;
+    }
+
+    &--max {
+      right: 44px;
+    }
+  }
+}

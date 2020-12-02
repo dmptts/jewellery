@@ -95,3 +95,24 @@
     }
   }
 }
+
+@media (max-width: $mobile-width) {
+  .catalog {
+    padding-top: 20px;
+    padding-bottom: 21px;
+  }
+
+  .catalog__item {
+    width: 130px;
+    margin-bottom: 25px;
+
+    &:nth-child(2n+2) {
+      margin-right: 0;
+    }
+
+    & img {
+      width: 130px;
+      height: 136px;
+    }
+  }
+}

@@ -180,7 +180,7 @@
   .catalog-filter__form {
     position: absolute;
 
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: stretch;
 
@@ -330,5 +330,67 @@
 
   .catalog-filter--no-js .catalog-filter__btn {
     display: none;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .catalog-filter {
+    width: calc(100% - 20px);
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+
+  .catalog-filter__form {
+    padding-bottom: 29px;
+  }
+
+  .catalog-filter__form legend {
+    padding-top: 27px;
+    padding-bottom: 22px;
+    padding-left: 21px;
+    padding-right: 21px;
+
+    &::before,
+    &::after {
+      top: 36px;
+
+      width: 14px;
+    }
+
+    &::before {
+      right: 27px;
+    }
+
+    &::after {
+      right: 17px;
+    }
+  }
+
+  .catalog-filter__dropdown {
+    padding-bottom: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .catalog-filter__fieldset-wrapper--range .catalog-filter__dropdown {
+    padding-top: 21px;
+    padding-bottom: 26px;
+  }
+
+  .catalog-filter__submit {
+    margin-top: 31px;
+    margin-bottom: 19px;
+  }
+
+  .catalog-filter__close-btn {
+    right: 6px;
+  }
+
+  .catalog-filter__fieldset-wrapper--opened legend {
+    padding-bottom: 10px;
+  }
+
+  .catalog-filter--no-js {
+    width: 100%;
   }
 }

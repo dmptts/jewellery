@@ -84,3 +84,27 @@
     padding-left: 0;
   }
 }
+
+@media (max-width: $mobile-width) {
+  .paginator {
+    border: none;
+  }
+
+  .paginator__container {
+    padding-top: 22px;
+    padding-bottom: 63px;
+  }
+
+  .paginator__list {
+    justify-content: center;
+  }
+
+  .paginator__item {
+    margin-right: 23px;
+
+    &--prev,
+    &--next {
+      display: none;
+    }
+  }
+}
