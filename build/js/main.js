@@ -1,13 +1,32 @@
 'use strict';
 
+var catalogFilter = document.querySelector('.catalog-filter');
+
+if (catalogFilter) {
+  var toggleFieldset = function (fieldsetItem) {
+    fieldsetItem.classList.toggle('catalog-filter__fieldset-wrapper--opened');
+  };
+
+  var onLegendClick = function (evt) {
+    var fieldsetItem = evt.target.closest('.catalog-filter__fieldset-wrapper');
+    toggleFieldset(fieldsetItem);
+  };
+
+  catalogFilter.addEventListener('click', onLegendClick);
+
+  window.filter = {
+    elem: catalogFilter
+  };
+}
+
 (function () {
   var faqList = document.querySelector('.faq__list');
 
-  var toggleFaqItem = function (item) {
-    item.classList.toggle('faq__item--opened');
-  };
-
   if (faqList) {
+    var toggleFaqItem = function (item) {
+      item.classList.toggle('faq__item--opened');
+    };
+
     faqList.addEventListener('click', function (evt) {
       var faqItem = evt.target.closest('li');
       toggleFaqItem(faqItem);
@@ -259,6 +278,9 @@
     }
     if (window.faq) {
       window.faq.init();
+    }
+    if (window.filter) {
+      window.filter.elem.classList.remove('catalog-filter--no-js');
     }
     checkNeedToChangeElems();
   };

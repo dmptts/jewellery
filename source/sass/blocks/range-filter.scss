@@ -13,7 +13,7 @@
 .range-filter__scale {
   position: absolute;
   top: 0;
-  left: 42px;
+  left: 51px;
   right: 41px;
 
   height: 1px;
@@ -29,8 +29,10 @@
   flex-direction: column;
   align-content: center;
 
+  cursor: pointer;
+
   &--min {
-    left: 42px;
+    left: 51px;
     transform: translateX(-50%);
   }
 
@@ -54,7 +56,7 @@
   width: 15px;
   height: 15px;
   margin: 0 auto;
-  margin-bottom: 3px;
+  margin-bottom: 8px;
 
   background-color: $color-brown;
   border-radius: 50%;
@@ -65,4 +67,24 @@
   line-height: 18px;
   font-weight: 500;
   text-align: center;
+}
+
+@media (max-width: $tablet-width) {
+  .range-filter__ctrl {
+    top: -8px;
+
+    &--min {
+      left: 60px;
+    }
+  }
+
+  .range-filter__ctrl-btn {
+    width: 18px;
+    height: 18px;
+  }
+
+  .range-filter__ctrl-value {
+    font-size: 16px;
+    line-height: 21px;
+  }
 }

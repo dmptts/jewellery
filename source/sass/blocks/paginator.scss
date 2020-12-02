@@ -78,3 +78,9 @@
     cursor: default;
   }
 }
+
+@media (max-width: $tablet-width) {
+  .paginator__list {
+    padding-left: 0;
+  }
+}

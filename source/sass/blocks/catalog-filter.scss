@@ -14,6 +14,12 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  &--range .catalog-filter__dropdown {
+    padding-top: 14px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+  }
 }
 
 .catalog-filter__form fieldset {
@@ -30,12 +36,14 @@
 
   width: 100%;
   padding-top: 25px;
-  padding-bottom: 23px;
+  padding-bottom: 20px;
   padding-left: 25px;
   padding-right: 25px;
 
   line-height: 21px;
   color: $color-black;
+
+  cursor: pointer;
 
   &:hover {
     color: rgba($color-black, 0.6);
@@ -72,26 +80,15 @@
 
 .catalog-filter__dropdown {
   display: none;
-  padding-bottom: 12px;
+  padding-top: 13px;
+  padding-bottom: 26px;
   padding-left: 34px;
   padding-right: 25px;
 }
 
-.catalog-filter__fieldset-wrapper--opened legend {
-  &::before {
-    transform: rotate(-45deg);
-  }
-
-  &::after {
-    transform: rotate(45deg);
-  }
-}
-
-.catalog-filter__fieldset-wrapper--opened .catalog-filter__dropdown {
-  display: block;
-}
-
 .catalog-filter__form label {
+  margin-bottom: 12px;
+
   font-size: 14px;
   line-height: 18px;
   color: $color-black;
@@ -103,7 +100,6 @@
   position: relative;
 
   display: block;
-  margin-bottom: 12px;
   padding-left: 25px;
 
   &::before {
@@ -130,9 +126,209 @@
 
 .catalog-filter__submit {
   margin-top: 36px;
-  margin-bottom: 24px;
+  margin-bottom: 25px;
 }
 
-.catalog-filter__btn {
+.catalog-filter__btn,
+.catalog-filter__close-btn {
   display: none;
+}
+
+.catalog-filter__fieldset-wrapper--opened legend {
+  padding-bottom: 10px;
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+}
+
+.catalog-filter__fieldset-wrapper--opened .catalog-filter__dropdown {
+  display: block;
+}
+
+.catalog-filter--no-js .catalog-filter__dropdown {
+  display: block;
+}
+
+.catalog-filter--no-js legend {
+  cursor: default;
+
+  &:hover,
+  &:active {
+    color: $color-black;
+  }
+}
+
+.catalog-filter--no-js legend::before,
+.catalog-filter--no-js legend::after {
+  display: none;
+}
+
+@media (max-width: $tablet-width) {
+  .catalog-filter {
+    position: relative;
+
+    width: 100%;
+    padding-top: 51px;
+    padding-bottom: 25px;
+  }
+
+  .catalog-filter__form {
+    position: absolute;
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+
+    width: 100%;
+    padding-bottom: 38px;
+
+    background-color: #ffffff;
+    box-shadow: 0 5px 32px 0 rgba(219, 213, 208, 0.25);
+  }
+
+  .catalog-filter__fieldset-wrapper {
+    border: none;
+    border-bottom: 1px solid $color-brown;
+
+    &--range .catalog-filter__dropdown {
+      padding-top: 22px;
+      padding-bottom: 36px;
+    }
+  }
+
+  .catalog-filter__form legend {
+    padding-top: 37px;
+    padding-bottom: 32px;
+    padding-left: 21px;
+    padding-right: 21px;
+
+    font-size: 18px;
+    line-height: 23px;
+
+    &::before,
+    &::after {
+      top: 45px;
+
+      width: 17px;
+    }
+
+    &::before {
+      right: 52px;
+    }
+
+    &::after {
+      right: 40px;
+    }
+  }
+
+  .catalog-filter__dropdown {
+    padding-left: 31px;
+    padding-right: 31px;
+    padding-bottom: 36px;
+  }
+
+  .catalog-filter__form label {
+    margin-bottom: 17px;
+
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .catalog-filter__form input[type="checkbox"] + label {
+    padding-left: 30px;
+
+    &::before {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .catalog-filter__submit {
+    margin-top: 41px;
+  }
+
+  .catalog-filter__submit,
+  .catalog-filter__reset {
+    width: auto;
+    margin-left: 21px;
+    margin-right: 21px;
+  }
+
+  .catalog-filter__btn {
+    display: block;
+  }
+
+  .catalog-filter__close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    display: block;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+
+    font-size: 0;
+
+    background-color: $color-black;
+    border: none;
+    border-radius: 50%;
+
+    transform: translate(50%, -50%);
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+
+      width: 20px;
+      height: 3px;
+
+      background-color: #ffffff;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &:hover::before,
+    &:hover::after {
+      background-color: $color-brown;
+    }
+
+    &:active::before,
+    &:active::after {
+      background-color: $color-grey;
+    }
+  }
+
+  .catalog-filter__fieldset-wrapper--opened legend {
+    padding-bottom: 9px;
+  }
+
+  .catalog-filter--no-js .catalog-filter__form {
+    position: static;
+
+    display: flex;
+  }
+
+  .catalog-filter--no-js .catalog-filter__close-btn {
+    display: none;
+  }
+
+  .catalog-filter--no-js .catalog-filter__btn {
+    display: none;
+  }
 }

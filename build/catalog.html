@@ -101,21 +101,22 @@
     </section>
 
     <div class="container">
-      <section class="catalog-filter">
+      <section class="catalog-filter catalog-filter--no-js">
         <h2 class="visually-hidden">Filter</h2>
         <form action="post" class="catalog-filter__form">
+          <button type="button" class="catalog-filter__close-btn">Закрыть окно</button>
           <div class="catalog-filter__fieldset-wrapper catalog-filter__fieldset-wrapper--opened">
             <fieldset>
               <legend>Product</legend>
 
               <div class="catalog-filter__dropdown">
                 <div class="catalog-filter__input-wrapper">
-                  <input type="checkbox" name="necklaces" id="necklaces-field" class="visually-hidden">
+                  <input type="checkbox" name="necklaces" id="necklaces-field" class="visually-hidden" checked="">
                   <label for="necklaces-field">Necklaces</label>
                 </div>
 
                 <div class="catalog-filter__input-wrapper">
-                  <input type="checkbox" name="chokers" id="chokers-field" class="visually-hidden">
+                  <input type="checkbox" name="chokers" id="chokers-field" class="visually-hidden" checked="">
                   <label for="chokers-field">Chokers</label>
                 </div>
 
@@ -125,7 +126,7 @@
                 </div>
 
                 <div class="catalog-filter__input-wrapper">
-                  <input type="checkbox" name="earrings" id="earrings-field" class="visually-hidden">
+                  <input type="checkbox" name="earrings" id="earrings-field" class="visually-hidden" checked="">
                   <label for="earrings-field">Earrings</label>
                 </div>
               </div>
@@ -167,7 +168,7 @@
               </div>
             </fieldset>
           </div>
-          <div class="catalog-filter__fieldset-wrapper catalog-filter__fieldset-wrapper--opened">
+          <div class="catalog-filter__fieldset-wrapper catalog-filter__fieldset-wrapper--range catalog-filter__fieldset-wrapper--opened">
             <fieldset>
               <legend>Price</legend>
 

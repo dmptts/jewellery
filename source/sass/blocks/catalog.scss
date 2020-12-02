@@ -66,3 +66,32 @@
     }
   }
 }
+
+@media (max-width: $tablet-width) {
+  .catalog {
+    padding-top: 25px;
+    padding-bottom: 34px;
+    padding-left: 0;
+  }
+
+  .catalog__item {
+    width: 206px;
+    margin-bottom: 35px;
+
+    & img {
+      width: 206px;
+      height: 208px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .catalog__item {
+      width: 250px;
+
+      & img {
+        width: 250px;
+        height: 252px;
+      }
+    }
+  }
+}

@@ -17,6 +17,9 @@
     if (window.faq) {
       window.faq.init();
     }
+    if (window.filter) {
+      window.filter.elem.classList.remove('catalog-filter--no-js');
+    }
     checkNeedToChangeElems();
   };
 
