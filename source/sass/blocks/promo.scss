@@ -6,6 +6,11 @@
   padding-bottom: 55px;
 }
 
+.promo--product-page .promo__container {
+  padding-top: 56px;
+  padding-bottom: 121px;
+}
+
 .promo h2 {
   margin: 0;
   margin-bottom: 27px;
@@ -16,6 +21,10 @@
   color: $color-black;
   font-weight: 700;
   text-transform: capitalize;
+}
+
+.promo--product-page h2 {
+  margin-bottom: 22px;
 }
 
 .promo__link {
@@ -44,6 +53,10 @@
   &:active {
     color: $color-grey;
   }
+}
+
+.promo--product-page .promo__link {
+  padding-bottom: 5px;
 }
 
 .promo__slider {

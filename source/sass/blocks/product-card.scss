@@ -1,0 +1,136 @@
+.product-card__container {
+  display: flex;
+
+  padding-top: 68px;
+  padding-bottom: 55px;
+}
+
+.product-card__gallery {
+  margin-top: 10px;
+}
+
+.product-card__info {
+  width: 370px;
+  margin-left: 8.5%;
+}
+
+.product-card h2 {
+  margin: 0;
+  margin-bottom: 15px;
+
+  @include garamond-font-family;
+  font-size: 34px;
+  line-height: 44px;
+  font-weight: 700;
+  color: $color-black;
+}
+
+.product-card b {
+  display: block;
+  margin-bottom: 36px;
+
+  font-size: 26px;
+  line-height: 34px;
+  font-weight: 400;
+  color: $color-black;
+}
+
+.product-card__tabs-controls {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-bottom: 14px;
+}
+
+.product-card__tabs-item {
+  margin-bottom: 5px;
+  margin-right: 38px;
+
+  line-height: 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.product-card__tabs-btn {
+  display: block;
+  padding: 0;
+
+  line-height: 21px;
+  color: $color-grey;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-brown;
+  }
+
+  &:active {
+    color: rgba($color-brown, 0.3);
+  }
+
+  &--active,
+  &--active:hover,
+  &--active:active {
+    cursor: default;
+    color: $color-black;
+  }
+}
+
+.product-card__tab table {
+  width: 100%;
+  margin-bottom: 50px;
+
+  border-collapse: collapse;
+}
+
+.product-card__tab td {
+  width: 50%;
+  padding: 0;
+  padding-top: 13px;
+  padding-bottom: 8px;
+
+  font-size: 14px;
+  line-height: 18px;
+  color: $color-black;
+
+  border-bottom: 1px solid #f6f5f4;
+
+  &:last-child {
+    font-weight: 400;
+    text-align: right;
+  }
+}
+
+.product-card__btn {
+  margin-bottom: 19px;
+
+  text-transform: none;
+}
+
+.product-card__terms-list {
+  @include list-reset;
+  display: flex;
+}
+
+.product-card__terms-item {
+  margin-right: 26px;
+
+  line-height: 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.product-card__terms-link {
+  display: block;
+  font-size: 14px;
+  line-height: 18px;
+  color: $color-grey;
+  text-align: center;
+}
