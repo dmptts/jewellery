@@ -11,14 +11,14 @@
     window.pageHeader.userBlock.classList.remove('user-block--no-js');
     if (window.slider.elem) {
       window.slider.elem.classList.remove('slider--no-js');
-      window.slider.setSliderItemsWidth(currentVersion);
-      window.slider.renderPaginator(currentVersion);
+      window.slider.init(currentVersion);
     }
     if (window.faq) {
       window.faq.init();
     }
-    if (window.filter) {
+    if (window.filter.elem) {
       window.filter.elem.classList.remove('catalog-filter--no-js');
+      window.filter.init(currentVersion);
     }
     checkNeedToChangeElems();
   };
@@ -57,6 +57,7 @@
       window.pageHeader.replaceSearch(currentVersion);
       window.pageHeader.replaceLoginBtn(currentVersion);
       window.slider.renderPaginator(currentVersion);
+      window.filter.init(currentVersion);
     }
 
     window.slider.setSliderItemsWidth(currentVersion);
