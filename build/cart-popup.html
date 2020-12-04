@@ -15,8 +15,9 @@
 </head>
 <body>
   <main>
-    <div class="cart-popup">
+    <div class="cart-popup cart-popup--no-js">
       <h1 class="visually-hidden">Cart</h1>
+      <a href="#" class="cart-popup__close-btn">Закрыть окно</a>
       <b>The item was added to your cart</b>
       <ul class="cart-popup__list">
         <li class="cart-popup__item">
@@ -26,8 +27,8 @@
             <img src="img/card-selected-gold-necklace@1x.jpg" srcset="img/card-selected-gold-necklace@2x.jpg 2x" width="84" height="79" alt="Gold necklace close-up">
           </picture>
           <div class="cart-popup__item-info">
-            <h2>Gold Necklace </h2>
-            <b>$ 115</b>
+            <h2>Gold Necklace</h2>
+            <span>$ 115</span>
           </div>
           <div class="cart-popup__item-counter counter">
             <button type="button" class="counter__control counter__control--increase">+</button>
@@ -41,8 +42,8 @@
         <p>Cart subtotal: <span class="cart-popup__total-price">$ 115</span></p>
       </div>
       <div class="cart-popup__controls">
-        <a href="catalog.html" class="cart-popup__btn btn"></a>
-        <a href="#" class="cart-popup__btn btn"></a>
+        <a href="catalog.html" class="cart-popup__return-btn btn btn--white">Continue shopping</a>
+        <a href="#" class="cart-popup__checkout-btn btn">Checkout</a>
       </div>
     </div>
   </main>
