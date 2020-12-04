@@ -7,7 +7,7 @@
 }
 
 .promo--product-page .promo__container {
-  padding-top: 56px;
+  padding-top: 60px;
   padding-bottom: 121px;
 }
 
@@ -71,6 +71,15 @@
     padding-bottom: 31px;
   }
 
+  .promo--product-page .promo__container {
+    padding-top: 35px;
+    padding-bottom: 72px;
+  }
+
+  .promo--product-page .promo__link {
+    padding-bottom: 2px;
+  }
+
   .promo h2 {
     margin-bottom: 21px;
   }
@@ -90,11 +99,28 @@
     padding-bottom: 25px;
   }
 
+  .promo--product-page .promo__container {
+    padding-top: 27px;
+    padding-bottom: 62px;
+  }
+
   .promo h2 {
     margin-bottom: 11px;
   }
 
+  .promo--product-page h2 {
+    margin-bottom: 22px;
+  }
+
+  .promo--product-page .promo__link {
+    padding-bottom: 0;
+  }
+
   .promo__slider {
     margin-top: 54px;
+  }
+
+  .promo--product-page .promo__slider {
+    margin-top: 43px;
   }
 }

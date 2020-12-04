@@ -39,10 +39,12 @@
   };
 
   var initFilter = function (currentVersion) {
-    if (currentVersion !== 'desktop') {
-      formToggleBtn.addEventListener('click', onToggleClick);
-    } else {
-      catalogFilter.addEventListener('click', onLegendClick);
+    if (catalogFilter) {
+      if (currentVersion !== 'desktop') {
+        formToggleBtn.addEventListener('click', onToggleClick);
+      } else {
+        catalogFilter.addEventListener('click', onLegendClick);
+      }
     }
   };
 
