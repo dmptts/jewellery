@@ -27,6 +27,7 @@
     } else {
       cartBtn.addEventListener('click', onCartBtnClick);
       cartBtn.addEventListener('keydown', onCartBtnEnterPress);
+      cartBtn.focus();
       document.removeEventListener('keydown', onDocumentEscPress);
       popupOverlay.removeEventListener('click', onPopupOverlayClick);
       cartPopupCloseBtn.removeEventListener('click', onCartPopupCloseBtnClick);
@@ -95,7 +96,6 @@
   };
 })();
 
-
 (function () {
   var catalogFilter = document.querySelector('.catalog-filter');
   var filterForm = document.querySelector('.catalog-filter__form');
@@ -163,6 +163,135 @@
       toggleFaqItem(faqItem);
     });
   }
+})();
+
+(function () {
+  var isStorageSupport = true;
+
+  var loginForm = document.querySelector('.login-popup__form');
+  var emailField = document.querySelector('.login-popup input[name="email"]');
+  var passwordField = document.querySelector('.login-popup input[type="password"');
+
+  var checkLocalStorage = function () {
+    try {
+      localStorage.getItem('login');
+    } catch (err) {
+      isStorageSupport = false;
+    }
+  };
+
+  var fillInputs = function () {
+    if (isStorageSupport) {
+      if (localStorage.getItem('email') !== null) {
+        emailField.value = localStorage.getItem('email');
+      }
+    }
+  };
+
+  var saveToLocalStorage = function () {
+    if (isStorageSupport) {
+      localStorage.setItem('email', emailField.value);
+    }
+  };
+
+  var placeFocus = function () {
+    if (emailField.value) {
+      passwordField.focus();
+    } else {
+      emailField.focus();
+    }
+  };
+
+  var initForm = function () {
+    checkLocalStorage();
+    fillInputs();
+    placeFocus();
+    loginForm.addEventListener('submit', onFormSubmit);
+  };
+
+  var onFormSubmit = function () {
+    saveToLocalStorage();
+  };
+
+  window.loginForm = {
+    elem: loginForm,
+    init: initForm
+  };
+})();
+
+(function () {
+  var pageBody = document.querySelector('body');
+  var userBtn = document.querySelector('.page-header__login-btn');
+  var loginPopup = document.querySelector('.login-popup');
+  var loginPopupCloseBtn = document.querySelector('.login-popup__close-btn');
+  var popupOverlay = document.querySelector('.popup-overlay');
+
+  var toggleLoginPopup = function () {
+    loginPopup.classList.toggle('login-popup--opened');
+    popupOverlay.classList.toggle('popup-overlay--opened');
+    pageBody.classList.toggle('no-scroll');
+
+    if (loginPopup.classList.contains('login-popup--opened')) {
+      userBtn.removeEventListener('click', onUserBtnClick);
+      userBtn.removeEventListener('keydown', onUserBtnEnterPress);
+      document.addEventListener('keydown', onDocumentEscPress);
+      popupOverlay.addEventListener('click', onPopupOverlayClick);
+      loginPopupCloseBtn.addEventListener('click', onCartPopupCloseBtnClick);
+      loginPopupCloseBtn.addEventListener('keydown', onCartPopupCloseBtnEnterPress);
+      window.loginForm.init();
+    } else {
+      userBtn.addEventListener('click', onUserBtnClick);
+      userBtn.addEventListener('keydown', onUserBtnEnterPress);
+      document.removeEventListener('keydown', onDocumentEscPress);
+      popupOverlay.removeEventListener('click', onPopupOverlayClick);
+      loginPopupCloseBtn.removeEventListener('click', onCartPopupCloseBtnClick);
+      loginPopupCloseBtn.removeEventListener('keydown', onCartPopupCloseBtnEnterPress);
+    }
+  };
+
+  var initLoginPopup = function () {
+    userBtn.addEventListener('click', onUserBtnClick);
+    userBtn.addEventListener('keydown', onUserBtnEnterPress);
+  };
+
+  var onUserBtnClick = function (evt) {
+    evt.preventDefault();
+    toggleLoginPopup();
+  };
+
+  var onUserBtnEnterPress = function (evt) {
+    if (evt.key === 'Enter') {
+      evt.preventDefault();
+      toggleLoginPopup();
+    }
+  };
+
+  var onDocumentEscPress = function (evt) {
+    if (evt.key === 'Escape') {
+      evt.preventDefault();
+      toggleLoginPopup();
+    }
+  };
+
+  var onPopupOverlayClick = function () {
+    toggleLoginPopup();
+  };
+
+  var onCartPopupCloseBtnClick = function (evt) {
+    evt.preventDefault();
+    toggleLoginPopup();
+  };
+
+  var onCartPopupCloseBtnEnterPress = function (evt) {
+    if (evt.key === 'Enter') {
+      toggleLoginPopup();
+    }
+  };
+
+  window.loginPopup = {
+    elem: loginPopup,
+    init: initLoginPopup
+  };
 })();
 
 (function () {
@@ -418,8 +547,10 @@
       window.filter.init(currentVersion);
     }
     if (window.cartPopup.elem) {
-      window.cartPopup.elem.classList.remove('cart-popup--no-js');
       window.cartPopup.init();
+    }
+    if (window.loginPopup.elem) {
+      window.loginPopup.init();
     }
     checkNeedToChangeElems();
   };

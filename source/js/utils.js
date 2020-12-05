@@ -21,8 +21,10 @@
       window.filter.init(currentVersion);
     }
     if (window.cartPopup.elem) {
-      window.cartPopup.elem.classList.remove('cart-popup--no-js');
       window.cartPopup.init();
+    }
+    if (window.loginPopup.elem) {
+      window.loginPopup.init();
     }
     checkNeedToChangeElems();
   };

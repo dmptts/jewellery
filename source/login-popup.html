@@ -13,18 +13,22 @@
 </head>
 <body>
   <main>
-    <div class="login-popup">
-      <h1>Log In</h1>
+    <div class="login-popup login-popup--opened">
+      <b>Log In</b>
       <form action="post" class="login-popup__form">
-        <label for="popup-email-field" class="visually-hidden">E-mail:</label>
-        <input type="email" name="email" id="popup-email-field" placeholder="Your E-mail" pattern="/^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u" required>
+        <div class="login-popup__input-wrapper">
+          <label for="popup-email-field" class="visually-hidden">E-mail:</label>
+          <input type="email" name="email" id="popup-email-field" placeholder="Your E-mail" pattern="/^.+@.+\..+$" required>
+        </div>
 
-        <label for="popup-password-field" class="visually-hidden">Password:</label>
-        <input type="password" name="password" id="popup-password-field" placeholder="Password" required>
+        <div class="login-popup__input-wrapper">
+          <label for="popup-password-field" class="visually-hidden">Password:</label>
+          <input type="password" name="password" id="popup-password-field" placeholder="Password" required>
+        </div>
 
-        <a href="#" class="login-popup__restore-link">Forgot your password</a>
+        <a href="#" class="login-popup__restore-link">Forgot your password?</a>
 
-        <button type="submit">Log In</button>
+        <button type="submit" class="login-popup__submit btn">Log In</button>
       </form>
 
       <p>Don’t have an account? <a href="#" class="login-popup__registration-link">Sign up</a></p>

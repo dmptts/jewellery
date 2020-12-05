@@ -1,0 +1,196 @@
+.login-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+
+  display: none;
+  width: 430px;
+  min-height: 586px;
+  padding-top: 187px;
+  padding-bottom: 53px;
+  padding-left: 45px;
+  padding-right: 45px;
+
+  background-color: #f0eae4;
+  background-image: url("../img/bg-login-desktop@1x.jpg");
+  background-repeat: no-repeat;
+  background-size: 430px 138px;
+  background-position: top left;
+
+  transform: translate(-50%, -50%);
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/bg-login-desktop@2x.jpg");
+  }
+}
+
+.login-popup__close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+
+  width: 14px;
+  height: 14px;
+
+  font-size: 0;
+
+  background-color: transparent;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+
+    width: 20px;
+    height: 2px;
+
+    background-color: $color-black;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:hover::before,
+  &:hover::after {
+    background-color: $color-brown;
+  }
+
+  &:active::before,
+  &:active::after {
+    background-color: rgba($color-brown, 0.6);
+  }
+}
+
+.login-popup b {
+  display: block;
+  margin-bottom: 28px;
+
+  @include garamond-font-family;
+  font-size: 34px;
+  line-height: 44px;
+  font-weight: 700;
+  color: $color-black;
+  text-align: center;
+}
+
+.login-popup__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-popup__form input {
+  width: 100%;
+  padding: 0;
+  padding-top: 7px;
+  padding-bottom: 7px;
+
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-black;
+
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $color-black;
+
+  &::placeholder {
+    color: $color-grey;
+  }
+}
+
+.login-popup__input-wrapper {
+  margin-top: 29px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.login-popup__restore-link {
+  align-self: flex-end;
+
+  display: block;
+  margin-top: 6px;
+  margin-bottom: 44px;
+
+  font-size: 12px;
+  line-height: 18px;
+
+  color: $color-grey;
+
+  &:hover {
+    color: $color-brown;
+  }
+
+  &:active {
+    color: rgba($color-brown, 0.6);
+  }
+}
+
+.login-popup p {
+  margin: 0;
+  margin-top: 16px;
+
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-grey;
+  text-align: center;
+}
+
+.login-popup__registration-link {
+  color: $color-black;
+
+  &:hover {
+    color: $color-brown;
+  }
+
+  &:active {
+    color: rgba($color-brown, 0.6);
+  }
+}
+
+.login-popup--opened {
+  display: block;
+}
+
+@media (max-width: $mobile-width) {
+  .login-popup {
+    // left: auto;
+
+    // width: 100%;
+    width: 270px;
+    min-height: 470px;
+    // margin-left: 25px;
+    // margin-right: 25px;
+    padding-top: 121px;
+    padding-bottom: 32px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    // background-size: 100% auto;
+    background-size: 270px 84px;
+  }
+
+  .login-popup b {
+    margin-bottom: 21px;
+
+    font-size: 24px;
+    line-height: 31px;
+  }
+
+  .login-popup__input-wrapper {
+    margin-top: 24px;
+  }
+
+  .login-popup__restore-link {
+    margin-bottom: 34px;
+  }
+}

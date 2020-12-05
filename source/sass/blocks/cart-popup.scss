@@ -160,16 +160,9 @@
   }
 }
 
-.cart-popup--no-js {
-  box-shadow: 0 5px 32px 0 rgba(219, 213, 208, 0.25);
-}
-
-.cart-popup--no-js .cart-popup__close-btn {
-  display: none;
-}
-
 .cart-popup--opened {
   display: block;
+  box-shadow: 0 5px 32px 0 rgba(219, 213, 208, 0.25);
 }
 
 @media (max-width: $mobile-width) {

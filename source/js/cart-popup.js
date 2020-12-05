@@ -27,6 +27,7 @@
     } else {
       cartBtn.addEventListener('click', onCartBtnClick);
       cartBtn.addEventListener('keydown', onCartBtnEnterPress);
+      cartBtn.focus();
       document.removeEventListener('keydown', onDocumentEscPress);
       popupOverlay.removeEventListener('click', onPopupOverlayClick);
       cartPopupCloseBtn.removeEventListener('click', onCartPopupCloseBtnClick);
@@ -94,4 +95,3 @@
     init: initCartPopup
   };
 })();
-

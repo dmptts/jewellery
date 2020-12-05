@@ -126,6 +126,10 @@
       margin-right: 0;
     }
 
+    &:nth-last-child(-n+2) {
+      margin-bottom: 0;
+    }
+
     & img {
       width: 130px;
       height: 136px;

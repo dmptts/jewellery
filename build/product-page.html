@@ -33,7 +33,7 @@
 
           <div class="page-header__user-block user-block user-block--no-js">
             <a href="login-popup.html" class="page-header__login-btn user-block__btn user-block__btn--login">Login</a>
-            <a href="#" class="user-block__btn user-block__btn--cart">
+            <a href="login-popup.html" class="user-block__btn user-block__btn--cart">
               <!-- 1x: 20x18; 2x: 40x36 -->
               <svg class="user-block__cart-icon" width="20" height="18">
                 <use xlink:href="img/sprite_auto.svg#icon-cart"></use>
@@ -445,7 +445,7 @@
     </div>
   </footer>
 
-  <div class="cart-popup cart-popup--no-js">
+  <div class="cart-popup">
     <h1 class="visually-hidden">Cart</h1>
     <a href="#" class="cart-popup__close-btn">Close window</a>
     <b>The item was added to your cart</b>
@@ -477,18 +477,23 @@
     </div>
   </div>
 
-  <div class="login-popup">
-    <h2>Log In</h2>
+  <div class="login-popup login-popup--no-js">
+    <a href="#" class="login-popup__close-btn">Close window</a>
+    <b>Log In</b>
     <form action="post" class="login-popup__form">
-      <label for="popup-email-field" class="visually-hidden">E-mail:</label>
-      <input type="email" name="email" id="popup-email-field" placeholder="Your E-mail" pattern="/^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u" required="">
+      <div class="login-popup__input-wrapper">
+        <label for="popup-email-field" class="visually-hidden">E-mail:</label>
+        <input type="email" name="email" id="popup-email-field" placeholder="Your E-mail" pattern="/^.+@.+\..+$" required="">
+      </div>
 
-      <label for="popup-password-field" class="visually-hidden">Password:</label>
-      <input type="password" name="password" id="popup-password-field" placeholder="Password" required="">
+      <div class="login-popup__input-wrapper">
+        <label for="popup-password-field" class="visually-hidden">Password:</label>
+        <input type="password" name="password" id="popup-password-field" placeholder="Password" required="">
+      </div>
 
-      <a href="#" class="login-popup__restore-link">Forgot your password</a>
+      <a href="#" class="login-popup__restore-link">Forgot your password?</a>
 
-      <button type="submit">Log In</button>
+      <button type="submit" class="btn">Log In</button>
     </form>
 
     <p>Don’t have an account? <a href="#" class="login-popup__registration-link">Sign up</a></p>

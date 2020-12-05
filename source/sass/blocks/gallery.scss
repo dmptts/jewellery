@@ -78,11 +78,15 @@
 
 @media (max-width: $mobile-width) {
   .gallery {
-    width: auto;
+    width: 100%;
   }
 
   .gallery__list {
     display: none;
+  }
+
+  .gallery__link--selected {
+    width: 100%;
   }
 
   .gallery__link--selected img {
