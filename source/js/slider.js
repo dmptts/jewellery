@@ -37,10 +37,10 @@
     for (var i = 0; i < maxPageNum; i++) {
 
       paginatorFragment.appendChild(paginatorLinkElement.cloneNode(true));
-      paginatorFragment.children[i].children[0].textContent = i + 1;
+      paginatorFragment.childNodes[i].childNodes[0].textContent = i + 1;
 
       if (i === 0) {
-        paginatorFragment.children[i].children[0].classList.add('slider__paginator-link--active');
+        paginatorFragment.childNodes[i].childNodes[0].classList.add('slider__paginator-link--active');
       }
     }
 
