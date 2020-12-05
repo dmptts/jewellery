@@ -30,10 +30,13 @@
 
   var renderPaginatorLinks = function () {
     var paginatorFragment = document.createDocumentFragment();
+    var paginatorLinkElement = document.createElement('li');
+    paginatorLinkElement.classList.add('.slider__paginator-item');
+    paginatorLinkElement.innerHTML = '<a href="#" class="slider__paginator-link"></a>';
 
     for (var i = 0; i < maxPageNum; i++) {
-      var paginatorLinkElement = paginatorLinkTemplate.content.cloneNode(true);
-      paginatorFragment.appendChild(paginatorLinkElement);
+
+      paginatorFragment.appendChild(paginatorLinkElement.cloneNode(true));
       paginatorFragment.children[i].children[0].textContent = i + 1;
 
       if (i === 0) {
