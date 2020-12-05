@@ -2,7 +2,7 @@
 
 (function () {
   var pageBody = document.querySelector('body');
-  var userBtn = document.querySelector('.page-header__login-btn');
+  var userBtn = document.querySelector('.header__login-btn');
   var loginPopup = document.querySelector('.login-popup');
   var loginPopupCloseBtn = document.querySelector('.login-popup__close-btn');
   var popupOverlay = document.querySelector('.popup-overlay');

@@ -1,8 +1,8 @@
-.page-header__top {
+.header__top {
   border-bottom: 1px solid #f6f5f4;
 }
 
-.page-header__top-container {
+.header__top-container {
   justify-content: space-between;
   align-items: flex-start;
 
@@ -10,7 +10,7 @@
   padding-bottom: 18px;
 }
 
-.page-header__top-wrapper {
+.header__top-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -19,80 +19,71 @@
   width: calc(50% + 33px);
 }
 
-.page-header__menu--product-page {
+.header__menu--product-page {
   border-bottom: 1px solid #f6f5f4;
 }
 
-.page-header__menu-container {
-  justify-content: center;
-
-  padding-top: 21px;
-  padding-bottom: 16px;
-  padding-left: 98px;
-  padding-right: 98px;
-}
-
-.page-header__search {
+.header__search {
   order: 1;
 
   margin-top: 8px;
 }
 
-.page-header__logo-link {
+.header__logo-link {
   line-height: 0;
 }
 
-.page-header__logo {
+.header__logo {
   width: 66px;
   height: 66px;
 
   fill: $color-brown;
 }
 
-.page-header__user-block {
+.header__user-block {
   order: 1;
 
   margin-top: 12px;
   margin-left: 50px;
 }
 
-.page-header__toggle {
+.header__toggle {
   display: none;
 }
 
-.page-header__nav {
+.header__nav {
   margin-right: -10px;
 }
 
-.page-header--inner-page .page-header__top-container {
+.header--inner-page .header__top-container {
   align-items: center;
 
   padding-top: 30px;
   padding-bottom: 29px;
 }
 
-.page-header--inner-page .page-header__top-wrapper {
+.header--inner-page .header__top-wrapper {
   align-items: center;
 }
 
-.page-header--inner-page .page-header__search {
+.header--inner-page .header__search {
   margin-top: 0;
 }
 
-.page-header--inner-page .page-header__user-block {
+.header--inner-page .header__user-block {
   margin-top: 5px;
 }
 
 @media (max-width: $tablet-width) {
-  .page-header {
+  .header {
     position: relative;
   }
 
-  .page-header__top {
+  .header__top {
     border: none;
   }
 
-  .page-header__top-container {
+  .header__top-container {
     flex-direction: column;
     align-items: flex-end;
 
@@ -100,14 +91,14 @@
     padding-bottom: 30px;
   }
 
-  .page-header__top-wrapper {
+  .header__top-wrapper {
     align-items: center;
     order: 0;
 
     width: 100%;
   }
 
-  .page-header__menu {
+  .header__menu {
     position: absolute;
     top: 100%;
     left: 0;
@@ -115,23 +106,19 @@
 
     display: none;
     width: 100%;
-  }
-
-  .page-header__menu-container {
-    flex-direction: column;
-
     padding-top: 2px;
+    padding-bottom: 71px;
     padding-left: 45px;
     padding-right: 45px;
 
     background-color: $color-brown;
   }
 
-  .page-header__logo-link {
+  .header__logo-link {
     order: 2;
   }
 
-  .page-header__toggle {
+  .header__toggle {
     position: relative;
 
     order: 1;
@@ -163,32 +150,29 @@
     }
   }
 
-  .page-header__user-block {
+  .header__user-block {
     order: 3;
 
     margin-top: 5px;
   }
 
-  .page-header__search {
+  .header__search {
     order: 0;
 
     margin-bottom: 48px;
   }
 
-  .page-header--menu-opened,
-  .page-header--no-js {
+  .header--menu-opened,
+  .header--no-js {
     background-color: $color-brown;
   }
 
-  .page-header--menu-opened .page-header__menu {
+  .header--menu-opened .header__menu {
     display: block;
-  }
-
-  .page-header--menu-opened .page-header__menu-container {
     padding-bottom: 67px;
   }
 
-  .page-header--menu-opened .page-header__toggle {
+  .header--menu-opened .header__toggle {
     &::before,
     &::after {
       position: absolute;
@@ -212,102 +196,99 @@
     }
   }
 
-  .page-header--menu-opened .page-header__nav {
+  .header--menu-opened .header__nav {
     padding-bottom: 44px;
   }
 
-  .page-header--menu-opened .page-header__login-btn {
+  .header--menu-opened .header__login-btn {
     color: #ffffff;
   }
 
-  .page-header--no-js .page-header__top-container {
+  .header--no-js .header__top-container {
     justify-content: flex-end;
 
     padding-bottom: 24px;
   }
 
-  .page-header--no-js .page-header__top-wrapper {
+  .header--no-js .header__top-wrapper {
     width: calc(50% + 33px);
     margin-bottom: 32px;
   }
 
-  .page-header--no-js .page-header__menu {
+  .header--no-js .header__menu {
     position: static;
     display: block;
-  }
-
-  .page-header--no-js .page-header__menu-container {
     padding-top: 24px;
     padding-bottom: 80px;
   }
 
-  .page-header--menu-opened .page-header__logo,
-  .page-header--no-js .page-header__logo {
+  .header--menu-opened .header__logo,
+  .header--no-js .header__logo {
     fill: #ffffff;
   }
 
-  .page-header--no-js .page-header__toggle {
+  .header--no-js .header__toggle {
     display: none;
   }
 
-  .page-header--no-js .page-header__search {
+  .header--no-js .header__search {
     margin-bottom: 0;
   }
 }
 
 @media (max-width: $mobile-width) {
-  .page-header__top-container {
+  .header__top-container {
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  .page-header__menu-container {
+  .header__menu {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  .page-header__logo {
+  .header__logo {
     width: 52px;
     height: 52px;
   }
 
-  .page-header__toggle {
+  .header__toggle {
     margin-right: 60px;
   }
 
-  .page-header__user-block {
+  .header__user-block {
     margin-left: 10px;
   }
 
-  .page-header__search {
+  .header__search {
     margin-bottom: 38px;
   }
 
-  .page-header--menu-opened .page-header__nav {
+  .header--menu-opened .header__nav {
     padding-bottom: 34px;
   }
 
-  .page-header--menu-opened .page-header__menu-container,
-  .page-header--no-js .page-header__menu-container {
-    padding-bottom: 37px;
+  .header--menu-opened .header__menu,
+  .header--no-js .header__menu {
+    padding-bottom: 41px;
   }
 
-  .page-header--no-js .page-header__top-container {
+  .header--no-js .header__top-container {
     padding-bottom: 19px;
   }
 
-  .page-header--no-js .page-header__top-wrapper {
+  .header--no-js .header__top-wrapper {
     width: calc(50% + 26px);
     margin-bottom: 22px;
   }
 
-  .page-header--no-js .page-header__menu-container {
+  .header--no-js .header__menu {
     padding-top: 19px;
   }
 
-  .page-header--inner-page .page-header__top-container {
+  .header--inner-page .header__top-container {
     padding-top: 20px;
     padding-bottom: 20px;
   }

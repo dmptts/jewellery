@@ -1,21 +1,21 @@
 'use strict';
 
 (function () {
-  var pageHeader = document.querySelector('.page-header');
-  var topContainer = pageHeader.querySelector('.page-header__top-container');
-  var menuContainer = pageHeader.querySelector('.page-header__menu-container');
-  var mainNav = pageHeader.querySelector('.page-header__nav');
-  var search = pageHeader.querySelector('.search');
-  var userBlock = pageHeader.querySelector('.user-block');
-  var loginBtn = userBlock.querySelector('.user-block__btn--login');
-  var cartBtn = userBlock.querySelector('.user-block__btn--cart');
-  var toggleBtn = pageHeader.querySelector('.page-header__toggle');
+  var pageHeader = document.querySelector('.header');
+  var topContainer = document.querySelector('.header__top-container');
+  var menu = document.querySelector('.header__menu');
+  var mainNav = document.querySelector('.header__nav');
+  var search = document.querySelector('.search');
+  var userBlock = document.querySelector('.user-block');
+  var loginBtn = document.querySelector('.user-block__btn--login');
+  var cartBtn = document.querySelector('.user-block__btn--cart');
+  var toggleBtn = document.querySelector('.header__toggle');
 
   var replaceSearch = function (currentVersion) {
     var documentFragment = document.createDocumentFragment();
     documentFragment.appendChild(search);
     if (currentVersion !== 'desktop') {
-      menuContainer.insertBefore(documentFragment, mainNav);
+      menu.insertBefore(documentFragment, mainNav);
     } else {
       topContainer.appendChild(documentFragment);
     }
@@ -25,14 +25,14 @@
     var documentFragment = document.createDocumentFragment();
     documentFragment.appendChild(loginBtn);
     if (currentVersion !== 'desktop') {
-      menuContainer.appendChild(documentFragment);
+      menu.appendChild(documentFragment);
     } else {
       userBlock.insertBefore(documentFragment, cartBtn);
     }
   };
 
   var toggleMenu = function () {
-    pageHeader.classList.toggle('page-header--menu-opened');
+    pageHeader.classList.toggle('header--menu-opened');
     userBlock.classList.toggle('user-block--menu-opened');
   };
 

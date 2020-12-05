@@ -7,7 +7,7 @@
   var currentVersion;
 
   var initPage = function () {
-    window.pageHeader.elem.classList.remove('page-header--no-js');
+    window.pageHeader.elem.classList.remove('header--no-js');
     window.pageHeader.userBlock.classList.remove('user-block--no-js');
     if (window.slider.elem) {
       window.slider.elem.classList.remove('slider--no-js');
