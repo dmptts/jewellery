@@ -70,3 +70,15 @@
   color: $color-black;
   text-align: center;
 }
+
+@media (max-width: $mobile-width) {
+  .counter__control {
+    &--increase {
+      margin-bottom: 12px;
+    }
+
+    &--decrease {
+      margin-top: -1px;
+    }
+  }
+}

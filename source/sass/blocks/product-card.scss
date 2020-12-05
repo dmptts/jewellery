@@ -134,6 +134,14 @@
   line-height: 18px;
   color: $color-grey;
   text-align: center;
+
+  &:hover {
+    color: $color-brown;
+  }
+
+  &:active {
+    color: rgba($color-brown, 0.6);
+  }
 }
 
 @media (max-width: $tablet-width) {

@@ -20,6 +20,10 @@
       window.filter.elem.classList.remove('catalog-filter--no-js');
       window.filter.init(currentVersion);
     }
+    if (window.cartPopup.elem) {
+      window.cartPopup.elem.classList.remove('cart-popup--no-js');
+      window.cartPopup.init();
+    }
     checkNeedToChangeElems();
   };
 

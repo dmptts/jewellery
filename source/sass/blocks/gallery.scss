@@ -21,6 +21,10 @@
   width: 16.5%;
 }
 
+.gallery__item:hover {
+  outline: 2px solid $color-brown;
+}
+
 .gallery__link picture {
   display: block;
   line-height: 0;
