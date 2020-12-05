@@ -1,4 +1,5 @@
 .catalog {
+  width: calc(100% - 250px); // для работы flex-wrap в IE11
   padding-top: 80px;
   padding-bottom: 33px;
   padding-left: 50px;
