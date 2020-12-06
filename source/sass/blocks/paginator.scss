@@ -82,6 +82,7 @@
 
 @media (max-width: $tablet-width) {
   .paginator__list {
+    width: 100%;
     padding-left: 0;
   }
 }

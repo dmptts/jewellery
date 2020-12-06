@@ -120,7 +120,7 @@
   };
 
   var onLegendClick = function (evt) {
-    if (evt.target.tagName === 'legend') {
+    if (evt.target.tagName === 'LEGEND') {
       var fieldsetItem = evt.target.closest('.catalog-filter__fieldset-wrapper');
       toggleFieldset(fieldsetItem);
     }
@@ -137,8 +137,10 @@
   var initFilter = function (currentVersion) {
     if (catalogFilter) {
       if (currentVersion !== 'desktop') {
+        catalogFilter.removeEventListener('click', onLegendClick);
         formToggleBtn.addEventListener('click', onToggleClick);
       } else {
+        catalogFilter.removeEventListener('click', onLegendClick);
         catalogFilter.addEventListener('click', onLegendClick);
       }
     }
