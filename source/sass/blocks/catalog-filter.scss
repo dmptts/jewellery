@@ -2,8 +2,6 @@
   flex-shrink: 0;
 
   width: 250px;
-  padding-top: 80px;
-  padding-bottom: 33px;
 }
 
 .catalog-filter__fieldset-wrapper {
@@ -173,8 +171,7 @@
     position: relative;
 
     width: 100%;
-    min-height: 144px;
-    padding-top: 51px;
+    min-height: 93px;
     padding-bottom: 25px;
   }
 
@@ -345,9 +342,7 @@
 
 @media (max-width: $mobile-width) {
   .catalog-filter {
-
-    min-height: 128px;
-    padding-top: 40px;
+    min-height: 88px;
     padding-bottom: 20px;
   }
 

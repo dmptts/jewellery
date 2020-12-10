@@ -1,7 +1,5 @@
 .catalog {
   width: calc(100% - 250px); // для работы flex-wrap в IE11
-  padding-top: 80px;
-  padding-bottom: 33px;
   padding-left: 50px;
 }
 
@@ -74,7 +72,6 @@
   .catalog {
     width: 100%;
     padding-top: 25px;
-    padding-bottom: 34px;
     padding-left: 0;
   }
 
@@ -113,7 +110,6 @@
 @media (max-width: $mobile-width) {
   .catalog {
     padding-top: 20px;
-    padding-bottom: 21px;
   }
 
   .catalog__list {

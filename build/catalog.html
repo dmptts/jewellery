@@ -98,7 +98,7 @@
       </div>
     </section>
 
-    <div class="container">
+    <div class="catalog-container container">
       <section class="catalog-filter catalog-filter--no-js">
         <h2 class="visually-hidden">Filter</h2>
         <form action="post" class="catalog-filter__form">
@@ -177,11 +177,11 @@
                   </div>
                   <div class="range-filter__ctrl range-filter__ctrl--min">
                     <div class="range-filter__ctrl-btn"></div>
-                    <div class="range-filter__ctrl-value">$ 55</div>
+                    <div class="range-filter__ctrl-value">$ <input type="text" name="min-value-field" id="min-value" value="55" placeholder="30" pattern="/^\d+$/"></div>
                   </div>
                   <div class="range-filter__ctrl range-filter__ctrl--max">
                     <div class="range-filter__ctrl-btn"></div>
-                    <div class="range-filter__ctrl-value">$ 155</div>
+                    <div class="range-filter__ctrl-value">$ <input type="text" name="max-value-field" id="max-value" value="155" placeholder="300" pattern="/^\d+$/"></div>
                   </div>
                 </div>
               </div>
