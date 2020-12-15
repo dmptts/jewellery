@@ -126,6 +126,12 @@
     }
   };
 
+  var onFieldsetEnterPress = function (evt) {
+    if (evt.key === 'Enter') {
+      toggleFieldset(evt.target);
+    }
+  };
+
   var onCloseBtnClick = function () {
     toggleForm();
   };
@@ -139,9 +145,13 @@
       if (currentVersion !== 'desktop') {
         catalogFilter.removeEventListener('click', onLegendClick);
         formToggleBtn.addEventListener('click', onToggleClick);
+        catalogFilter.removeEventListener('keydown', onFieldsetEnterPress);
+        catalogFilter.addEventListener('keydown', onFieldsetEnterPress);
       } else {
         catalogFilter.removeEventListener('click', onLegendClick);
         catalogFilter.addEventListener('click', onLegendClick);
+        catalogFilter.removeEventListener('keydown', onFieldsetEnterPress);
+        catalogFilter.addEventListener('keydown', onFieldsetEnterPress);
       }
     }
   };
@@ -168,6 +178,7 @@
 })();
 
 (function () {
+  var pageBody = document.querySelector('body');
   var pageHeader = document.querySelector('.header');
   var topContainer = document.querySelector('.header__top-container');
   var menu = document.querySelector('.header__menu');
@@ -201,6 +212,7 @@
   var toggleMenu = function () {
     pageHeader.classList.toggle('header--menu-opened');
     userBlock.classList.toggle('user-block--menu-opened');
+    pageBody.classList.toggle('no-scroll');
   };
 
   toggleBtn.addEventListener('click', function (evt) {
@@ -346,6 +358,14 @@
 })();
 
 (function () {
+  var productCard = document.querySelector('.product-card');
+
+  window.productCard = {
+    elem: productCard
+  };
+})();
+
+(function () {
   var MOBILE_WIDTH = 767;
 
   var slider = document.querySelector('.slider');
@@ -355,7 +375,6 @@
   var sliderItems = document.querySelectorAll('.slider__item');
   var paginator = document.querySelector('.slider__paginator');
   var paginatorLinksArr = [];
-  var paginatorLinkTemplate = document.querySelector('#paginator-link');
 
   var touchstartX = 0;
   var touchendX = 0;
@@ -556,6 +575,9 @@
     }
     if (window.loginPopup.elem) {
       window.loginPopup.init();
+    }
+    if (window.productCard.elem) {
+      window.productCard.elem.classList.remove('product-card--no-js');
     }
     checkNeedToChangeElems();
   };

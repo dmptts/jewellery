@@ -92,6 +92,14 @@
   color: $color-black;
 
   cursor: pointer;
+
+  &:hover {
+    color: $color-brown;
+  }
+
+  &:active {
+    color: rgba($color-brown, 0.3);
+  }
 }
 
 .catalog-filter__form input[type="checkbox"] + label {
@@ -116,6 +124,14 @@
 
 .catalog-filter__input-wrapper:last-child label {
   margin-bottom: 0;
+}
+
+.catalog-filter__form input[type="checkbox"]:focus + label {
+  color: $color-brown;
+}
+
+.catalog-filter__form input[type="checkbox"]:active + label {
+  color: rgba($color-brown, 0.3);
 }
 
 .catalog-filter__form input[type="checkbox"]:checked + label::before {

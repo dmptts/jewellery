@@ -10,7 +10,6 @@
   var sliderItems = document.querySelectorAll('.slider__item');
   var paginator = document.querySelector('.slider__paginator');
   var paginatorLinksArr = [];
-  var paginatorLinkTemplate = document.querySelector('#paginator-link');
 
   var touchstartX = 0;
   var touchendX = 0;

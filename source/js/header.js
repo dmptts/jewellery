@@ -1,6 +1,7 @@
 'use strict';
 
 (function () {
+  var pageBody = document.querySelector('body');
   var pageHeader = document.querySelector('.header');
   var topContainer = document.querySelector('.header__top-container');
   var menu = document.querySelector('.header__menu');
@@ -34,6 +35,7 @@
   var toggleMenu = function () {
     pageHeader.classList.toggle('header--menu-opened');
     userBlock.classList.toggle('user-block--menu-opened');
+    pageBody.classList.toggle('no-scroll');
   };
 
   toggleBtn.addEventListener('click', function (evt) {

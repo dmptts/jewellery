@@ -60,7 +60,9 @@
   }
 
   &:hover::before,
-  &:hover::after {
+  &:hover::after,
+  &:focus::before,
+  &:focus::after {
     background-color: $color-brown;
   }
 
@@ -100,6 +102,7 @@
   background-color: transparent;
   border: none;
   border-bottom: 1px solid $color-black;
+  border-radius: 0;
 
   &::placeholder {
     color: $color-grey;

@@ -50,7 +50,9 @@
   }
 
   &:hover::before,
-  &:hover::after {
+  &:hover::after,
+  &:focus::before,
+  &:focus::after {
     background-color: $color-brown;
   }
 

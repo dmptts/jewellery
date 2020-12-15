@@ -66,7 +66,8 @@
   border: none;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $color-brown;
   }
 
@@ -76,9 +77,18 @@
 
   &--active,
   &--active:hover,
+  &--active:focus,
   &--active:active {
     cursor: default;
     color: $color-black;
+  }
+}
+
+.product-card__tab {
+  display: none;
+
+  &--active {
+    display: block;
   }
 }
 
@@ -142,6 +152,14 @@
   &:active {
     color: rgba($color-brown, 0.6);
   }
+}
+
+.product-card--no-js .product-card__tabs-controls {
+  display: none;
+}
+
+.product-card--no-js .product-card__tab {
+  display: block;
 }
 
 @media (max-width: $tablet-width) {
@@ -210,5 +228,9 @@
 
   .product-card__terms-item {
     width: 70px;
+  }
+
+  .product-card--no-js {
+    padding-top: 30px;
   }
 }

@@ -26,6 +26,9 @@
     if (window.loginPopup.elem) {
       window.loginPopup.init();
     }
+    if (window.productCard.elem) {
+      window.productCard.elem.classList.remove('product-card--no-js');
+    }
     checkNeedToChangeElems();
   };
 

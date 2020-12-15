@@ -103,7 +103,7 @@
         <h2 class="visually-hidden">Filter</h2>
         <form action="post" class="catalog-filter__form">
           <button type="button" class="catalog-filter__close-btn">Закрыть окно</button>
-          <div class="catalog-filter__fieldset-wrapper catalog-filter__fieldset-wrapper--opened">
+          <div class="catalog-filter__fieldset-wrapper catalog-filter__fieldset-wrapper--opened" tabindex="0">
             <fieldset>
               <legend>Product</legend>
 
@@ -131,7 +131,7 @@
             </fieldset>
           </div>
 
-          <div class="catalog-filter__fieldset-wrapper">
+          <div class="catalog-filter__fieldset-wrapper" tabindex="0">
             <fieldset>
               <legend>Material</legend>
 
@@ -149,7 +149,7 @@
             </fieldset>
           </div>
 
-          <div class="catalog-filter__fieldset-wrapper">
+          <div class="catalog-filter__fieldset-wrapper" tabindex="0">
             <fieldset>
               <legend>Collection</legend>
 
@@ -166,7 +166,7 @@
               </div>
             </fieldset>
           </div>
-          <div class="catalog-filter__fieldset-wrapper catalog-filter__fieldset-wrapper--range catalog-filter__fieldset-wrapper--opened">
+          <div class="catalog-filter__fieldset-wrapper catalog-filter__fieldset-wrapper--range catalog-filter__fieldset-wrapper--opened" tabindex="0">
             <fieldset>
               <legend>Price</legend>
 
@@ -177,11 +177,11 @@
                   </div>
                   <div class="range-filter__ctrl range-filter__ctrl--min">
                     <div class="range-filter__ctrl-btn"></div>
-                    <div class="range-filter__ctrl-value">$ <input type="text" name="min-value-field" id="min-value" value="55" placeholder="30" pattern="/^\d+$/"></div>
+                    <div class="range-filter__ctrl-value">$ <input type="text" name="min-value-field" id="min-value" value="55" placeholder="30" pattern="\d+"></div>
                   </div>
                   <div class="range-filter__ctrl range-filter__ctrl--max">
                     <div class="range-filter__ctrl-btn"></div>
-                    <div class="range-filter__ctrl-value">$ <input type="text" name="max-value-field" id="max-value" value="155" placeholder="300" pattern="/^\d+$/"></div>
+                    <div class="range-filter__ctrl-value">$ <input type="text" name="max-value-field" id="max-value" value="155" placeholder="300" pattern="\d+"></div>
                   </div>
                 </div>
               </div>
@@ -335,29 +335,27 @@
 
     <div class="paginator">
       <div class="paginator__container container">
-        <ul class="paginator__list">
-          <li class="paginator__item paginator__item--prev">
-            <a href="#" class="paginator__link paginator__link--prev">Previous</a>
-          </li>
-          <li class="paginator__item">
-            <a href="#" class="paginator__link paginator__link--active">1</a>
-          </li>
-          <li class="paginator__item">
-            <a href="#" class="paginator__link">2</a>
-          </li>
-          <li class="paginator__item">
-            <a href="#" class="paginator__link">3</a>
-          </li>
-          <li class="paginator__item">
-            <a href="#" class="paginator__link">4</a>
-          </li>
-          <li class="paginator__item">
-            <a href="#" class="paginator__link">5</a>
-          </li>
-          <li class="paginator__item paginator__item--next">
-            <a href="#" class="paginator__link paginator__link--next">Next</a>
-          </li>
-        </ul>
+        <div class="paginator__wrapper">
+          <a href="#" class="paginator__link paginator__link--prev">Previous</a>
+          <ul class="paginator__list">
+            <li class="paginator__item">
+              <a href="#" class="paginator__link paginator__link--active">1</a>
+            </li>
+            <li class="paginator__item">
+              <a href="#" class="paginator__link">2</a>
+            </li>
+            <li class="paginator__item">
+              <a href="#" class="paginator__link">3</a>
+            </li>
+            <li class="paginator__item">
+              <a href="#" class="paginator__link">4</a>
+            </li>
+            <li class="paginator__item">
+              <a href="#" class="paginator__link">5</a>
+            </li>
+          </ul>
+          <a href="#" class="paginator__link paginator__link--next">Next</a>
+        </div>
       </div>
     </div>
   </main>
@@ -369,7 +367,7 @@
         <p>News and updates from CH. No spam, we promise.</p>
         <div class="subscription-form__wrapper">
           <label for="footer-email-field" class="visually-hidden">E-mail:</label>
-          <input type="email" name="email" id="footer-email-field" placeholder="Your E-mail" pattern="/^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u" required>
+          <input type="email" name="email" id="footer-email-field" placeholder="Your E-mail" pattern="[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+" required>
           <button class="subscription-form__submit" type="submit">Sign Up
             <!-- 1x: 30x11; 2x: 60x22 -->
             <svg width="30" height="11">

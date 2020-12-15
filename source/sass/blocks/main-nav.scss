@@ -3,7 +3,7 @@
   justify-content: center;
 
   padding-top: 21px;
-  padding-bottom: 16px;
+  padding-bottom: 11px;
   padding-left: 98px;
   padding-right: 98px;
 }
@@ -11,6 +11,8 @@
 .main-nav__list {
   @include list-reset;
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
   &--secondary {
     display: none;
@@ -18,6 +20,7 @@
 }
 
 .main-nav__item {
+  margin-bottom: 5px;
   margin-right: 35px;
 
   &:last-child {
@@ -47,17 +50,24 @@
 @media (max-width: $tablet-width) {
   .main-nav {
     flex-direction: column;
+
     padding: 0;
   }
 
   .main-nav__list {
     flex-direction: column;
+    justify-content: flex-start;
     align-items: flex-start;
 
     margin-bottom: 40px;
 
+    &--main {
+      max-height: 285px;
+    }
+
     &--secondary {
       display: flex;
+      max-height: 132px;
     }
 
     &:last-child {

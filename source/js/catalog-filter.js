@@ -30,6 +30,12 @@
     }
   };
 
+  var onFieldsetEnterPress = function (evt) {
+    if (evt.key === 'Enter') {
+      toggleFieldset(evt.target);
+    }
+  };
+
   var onCloseBtnClick = function () {
     toggleForm();
   };
@@ -43,9 +49,13 @@
       if (currentVersion !== 'desktop') {
         catalogFilter.removeEventListener('click', onLegendClick);
         formToggleBtn.addEventListener('click', onToggleClick);
+        catalogFilter.removeEventListener('keydown', onFieldsetEnterPress);
+        catalogFilter.addEventListener('keydown', onFieldsetEnterPress);
       } else {
         catalogFilter.removeEventListener('click', onLegendClick);
         catalogFilter.addEventListener('click', onLegendClick);
+        catalogFilter.removeEventListener('keydown', onFieldsetEnterPress);
+        catalogFilter.addEventListener('keydown', onFieldsetEnterPress);
       }
     }
   };
