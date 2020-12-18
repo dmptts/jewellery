@@ -129,7 +129,8 @@
 
   color: $color-grey;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $color-brown;
   }
 
